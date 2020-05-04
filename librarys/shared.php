@@ -48,6 +48,7 @@ function callHook() {
 
     $urlArray = array();
     $urlArray = explode("/",$url);
+    print_r($urlArray);
 
     $controller = $urlArray[0];
     array_shift($urlArray);
@@ -57,7 +58,9 @@ function callHook() {
 
     $controllerName = $controller;
     $controller = ucwords($controller);
+    print_r($controller);
     $model = rtrim($controller, 's');
+    print_r($model);
     $controller .= 'Controller';
     $dispatch = new $controller($model,$controllerName,$action);
 
