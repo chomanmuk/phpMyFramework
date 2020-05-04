@@ -5,13 +5,13 @@
 class Template_
 {
 	var $compile_check = true;
-	var $compile_dir   = '../_compile';
+	var $compile_dir   = '_compile';
 	var $compile_ext   = 'php';
 	var $skin          = '';
 	var $notice        = false;
 	var $path_digest   = false;
 
-	var $template_dir  = '../_template';
+	var $template_dir  = '_template';
 	var $prefilter     = '';
 	var $postfilter    = '';
 	var $permission    = 0777;
@@ -75,6 +75,7 @@ class Template_
 	}
 	function print_($fid, $scope = '', $sub = false)
 	{
+	    print_r(ROOT);
 		if ( ! isset($this->tpl_[$fid]) )
 		{
 			$this->exit_('Error #2', 'template id <b>'.$fid.'</b> is not defined');
