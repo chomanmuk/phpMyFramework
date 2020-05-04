@@ -78,7 +78,6 @@ function __autoload($className) {
     if (file_exists(ROOT . DS . 'librarys' . DS . strtolower($className) . '.class.php')) {
         require_once(ROOT . DS . 'librarys' . DS . strtolower($className) . '.class.php');
     } else if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS . $className . '.class.php')) {
-        print_r($className);
         require_once(ROOT . DS . 'application' . DS . 'controllers' . DS . $className . '.class.php');
     } else if (file_exists(ROOT . DS . 'application' . DS . 'models' . DS . $className . '.class.php')) {
         require_once(ROOT . DS . 'application' . DS . 'models' . DS . $className . '.class.php');
