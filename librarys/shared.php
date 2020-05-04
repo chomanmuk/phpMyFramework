@@ -74,6 +74,7 @@ function callHook() {
 /** 자동 class 로드 **/
 
 function __autoload($className) {
+    print_r($className);
     if (file_exists(ROOT . DS . 'librarys' . DS . strtolower($className) . '.class.php')) {
         require_once(ROOT . DS . 'librarys' . DS . strtolower($className) . '.class.php');
     } else if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS . $className . '.class.php')) {
