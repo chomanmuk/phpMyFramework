@@ -5,7 +5,7 @@
 class Template_
 {
 	var $compile_check = true;
-	var $compile_dir   = '../../_compile';
+	var $compile_dir   = '_compile';
 	var $compile_ext   = 'php';
 	var $skin          = '';
 	var $notice        = false;
@@ -19,7 +19,7 @@ class Template_
 	var $auto_constant = false;
 
 	var $caching       = false;
-	var $cache_dir     = '../../_cache';
+	var $cache_dir     = 'tmp/_cache';
 	var $cache_expire  = 3600;
 
 	var $var_=array(''=>array());
