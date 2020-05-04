@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-// Template_ 2.2.8 2015-12-07 http://www.xtac.net Freeware - LGPL	
+// Template_ 2.2.8 2015-12-07 http://www.xtac.net Freeware - LGPL
 
 class Template_
 {
@@ -11,7 +11,7 @@ class Template_
 	var $notice        = false;
 	var $path_digest   = false;
 
-	var $template_dir  = '_template';
+	var $template_dir  = '_template'.DS.domain;
 	var $prefilter     = '';
 	var $postfilter    = '';
 	var $permission    = 0777;
@@ -21,7 +21,7 @@ class Template_
 	var $caching       = false;
 	var $cache_dir     = '_cache';
 	var $cache_expire  = 3600;
-	
+
 	var $var_=array(''=>array());
 	var $obj_=array();
 	var $_current_scope ='';
@@ -29,8 +29,8 @@ class Template_
 
 	function define($arg, $path='')
 	{
-		
-		if (is_array($arg)) 
+
+		if (is_array($arg))
 		{
 			foreach ($arg as $fid => $path)
 			{
@@ -60,7 +60,7 @@ class Template_
 		{
 			$var = array_merge($var=&$this->var_[$this->_current_scope], $arg);
 		}
-		else 
+		else
 		{
 			$this->var_[$this->_current_scope][$arg] = func_get_arg(1);
 		}
@@ -77,7 +77,7 @@ class Template_
 	{
 		if ( ! isset($this->tpl_[$fid]) )
 		{
-			$this->exit_('Error #2', 'template id <b>'.$fid.'</b> is not defined'); 
+			$this->exit_('Error #2', 'template id <b>'.$fid.'</b> is not defined');
 		}
 
 		$file_type	= $this->tpl_[$fid]['type'];
@@ -110,7 +110,7 @@ class Template_
 		if ($file_type === 'tpl')
 		{
 			$compile_path = $this->_get_compile_path( $file_path );
-			
+
 			if ( isset($this->var_[$fid]) )
 			{
 				$scope = $fid;
@@ -123,7 +123,7 @@ class Template_
 			else
 			{
 				$this->_php_error_reporting = error_reporting();
-				
+
 				if ($this->notice)
 				{
 					error_reporting( $this->_php_error_reporting | E_NOTICE );
@@ -138,7 +138,7 @@ class Template_
 				}
 				error_reporting( $this->_php_error_reporting );
 			}
-		} 
+		}
 		else if ($file_type === 'php')
 		{
 
@@ -161,50 +161,50 @@ class Template_
 				$this->_include_php( $file_path );
 			}
 		}
-		
-		
+
+
 		if ( $this->_cache_enabled($fid) )
 		{
 			$cache_content = ob_get_contents();
 			ob_end_flush();
-			
+
 			$this->_make_cache_dir($cache['path']);
-			
+
 			$fp=fopen($cache['path'], 'wb');
 			fwrite($fp, strlen($cache_content).'-'.$cache['header'].'*'.$cache_content);
 			fclose($fp);
 			chmod($cache['path'], $this->permission&~0111);
-			
-			if ($cache['remover']) 
+
+			if ($cache['remover'])
 			{
 				$P1 = $this->cache_dir.'/%clear/';
 				$P2 = $this->_path_in_cache_remover($cache['header']);
 
-				
+
 				if (is_array($cache['remover']))
 				{
-					foreach ($cache['remover'] as $r) 
+					foreach ($cache['remover'] as $r)
 					{
 						$this->_touch_cache_remover($P1.$r.$P2);
 					}
 				}
-				else 
+				else
 				{
 					$this->_touch_cache_remover($P1.$cache['remover'].$P2);
 				}
 
 			}
-		
-		} 
+
+		}
 		return;
 	}
 	function new_($obj)
 	{
 		$class = 'tpl_object_'.strtolower($obj);
-		
+
 		if ( !isset($this->obj_[$class]) )
 		{
-			if (!class_exists($class, false)) 
+			if (!class_exists($class, false))
 			{
 				include dirname(__file__).'/tpl_plugin/object.'.$obj.'.php';
 			}
@@ -216,7 +216,7 @@ class Template_
 					$args[]='$arg['.$i.']';
 				}
 				eval('$this->obj_[$class]=new $class('.implode(',',$args).');');
-			} 
+			}
 			else
 			{
 				$this->obj_[$class]=new $class;
@@ -228,7 +228,7 @@ class Template_
 	{
 		foreach (func_get_args() as $f)
 		{
-			if ( ! function_exists($f) ) 
+			if ( ! function_exists($f) )
 			{
 				include dirname(__file__).'/tpl_plugin/function.'.$f.'.php';
 			}
@@ -237,8 +237,8 @@ class Template_
 	function _include_tpl($TPL_CPL, $TPL_TPL, $TPL_SCP)
 	{
 		$TPL_VAR = &$this->var_[$TPL_SCP];
-		
-		if (false === include $TPL_CPL) 
+
+		if (false === include $TPL_CPL)
 		{
 			exit;
 		}
@@ -258,14 +258,14 @@ class Template_
 		$fp=fopen($compile_path, 'rb');
 		$compile = fread($fp, filesize($compile_path));
 		fclose($fp);
-		
+
 		echo preg_replace('/^<\?.*?\?>(\r\n|\n|\r)?/s', '', $compile);
-		
+
 	}
 	function _get_compile_path($rel_path)
 	{
 		$compile_ext=$this->compile_ext;
-		
+
 		if ($R=strpos($rel_path, '?'))
 		{
 			$compile_ext=substr($rel_path, $R+1).'.'.$compile_ext;
@@ -273,7 +273,7 @@ class Template_
 			$rel_path=substr($rel_path, 0, $R);
 		}
 
-		if (!$this->compile_dir) 
+		if (!$this->compile_dir)
 		{
 			$this->compile_dir = '.';
 		}
@@ -287,27 +287,27 @@ class Template_
 		}
 
 		$compile_path = $compile_base.'.'.$compile_ext;
-		
+
 		if (!$this->compile_check)
 		{
 			return $compile_path;
 		}
 
 		$template_path = $this->template_dir.'/'.($this->skin?$this->skin.'/':'').$rel_path;
-		
+
 		if (@!is_file($template_path))
 		{
 			$this->exit_('Error #1', 'cannot find defined template <b>'.$template_path.'</b>');
 		}
-		
+
 		$template_path = realpath($template_path);
 
 		$filemtime = @date('Y/m/d H:i:s', filemtime($template_path));
-		
+
 		$compile_header = '<?php /* Template_ 2.2.8 '.$filemtime.' '.$template_path.' ';
-		
+
 		if ($this->compile_check!=='dev' && @is_file($compile_path)) {
-			
+
 			$fp=fopen($compile_path, 'rb');
 			$head = fread($fp, strlen($compile_header)+9);
 			fclose($fp);
@@ -315,7 +315,7 @@ class Template_
 			if (strlen($head)>9
 				&& $compile_header == substr($head,0,-9)
 				&& filesize($compile_path) == (int)substr($head,-9) ) {
-				
+
 				return $compile_path;
 			}
 		}
@@ -323,12 +323,12 @@ class Template_
 		include_once dirname(__file__).'/Template_.compiler.php';
 		$compiler=new Template_Compiler_;
 		$compiler->_compile_template($this, $template_path, $compile_base, $compile_header);
-		
+
 		return $compile_path;
 	}
 	function setScope($scope='')
 	{
-		if ( ! isset($this->var_[$scope]) ) 
+		if ( ! isset($this->var_[$scope]) )
 		{
 			$this->var_[$scope]=array();
 		}
@@ -346,7 +346,7 @@ class Template_
 		}
 		else
 		{
-			if ($expiration < 0) 
+			if ($expiration < 0)
 			{
 				$this->tpl_[$fid]['cache'] = null;
 			}
@@ -368,7 +368,7 @@ class Template_
 
 	function isCached($fid)
 	{
-		if ( ! $this->caching  or  empty($this->tpl_[$fid]['cache'])  or  $this->compile_check==='dev') 
+		if ( ! $this->caching  or  empty($this->tpl_[$fid]['cache'])  or  $this->compile_check==='dev')
 		{
 			return false;
 		}
@@ -387,27 +387,27 @@ class Template_
 		if ($cache['multiplier'])
 		{
 			$cache['header'] .=  '/'. base64_encode(serialize($cache['multiplier']));
-		} 
+		}
 
 		$cache['path'] = $this->cache_dir.'/%cache'.$_SERVER['PHP_SELF'].'/'.md5($cache['header']);
 
-		if ( $cache['expiration'] === 1) 
+		if ( $cache['expiration'] === 1)
 		{
 			$cache['expiration'] = $this->cache_expire;
 		}
 
-		if ( @!is_file($cache['path']) ) 
+		if ( @!is_file($cache['path']) )
 		{
 			return $cache['is_cached'] = false;
 		}
 
 
-		if ( $cache['expiration']  &&  $cache['expiration']+filemtime($cache['path']) < time() ) 
+		if ( $cache['expiration']  &&  $cache['expiration']+filemtime($cache['path']) < time() )
 		{
 			return $cache['is_cached'] = false;
 		}
 
-		
+
 		if ($cache['remover'])
 		{
 			$P1 = $this->cache_dir.'/%clear/';
@@ -415,17 +415,17 @@ class Template_
 
 			if (is_array($cache['remover']))
 			{
-				foreach ($cache['remover'] as $r) 
+				foreach ($cache['remover'] as $r)
 				{
-					if (@ !is_file($P1.$r.$P2)) 
+					if (@ !is_file($P1.$r.$P2))
 					{
 						return $cache['is_cached'] = false;
 					}
 				}
-			} 
+			}
 			else
 			{
-				if (@ !is_file($P1.$cache['remover'].$P2)) 
+				if (@ !is_file($P1.$cache['remover'].$P2))
 				{
 					return $cache['is_cached'] = false;
 				}
@@ -446,8 +446,8 @@ class Template_
 
 		$cache['content'] = substr($content, $H+1);
 
-		
-		if ($header != $cache['header']  or  strlen($cache['content']) != $length ) 
+
+		if ($header != $cache['header']  or  strlen($cache['content']) != $length )
 		{
 			return $cache['is_cached'] = false;
 		}
@@ -462,14 +462,14 @@ class Template_
 		{
 			return;
 		}
-		
+
 		if (!func_num_args())
 		{
 			$this->_empty_out_cache_dir($this->cache_dir);
 		}
 		else
 		{
-			foreach (func_get_args() as $dir) 
+			foreach (func_get_args() as $dir)
 			{
 				$this->_empty_out_cache_dir($this->cache_dir.'/%clear/'.$dir);
 			}
@@ -530,13 +530,13 @@ class Template_
 	}
 	function _make_cache_dir($path)
 	{
-		if (@is_dir(dirname($path))) 
+		if (@is_dir(dirname($path)))
 		{
 			return;
 		}
 
 		$cache_dir = $this->cache_dir;
-		
+
 		if (substr(__file__,0,1) !== '/')
 		{  // windows
 			$path=preg_replace('/\\\\+/', '/', $path);
@@ -559,16 +559,16 @@ class Template_
 	}
 
 // About xprint() and xfetch(), refer http://www.xtac.net/bbs/?prc=read&idx=1091
-	function xprint($file, $type='tpl') 
-	{ 
+	function xprint($file, $type='tpl')
+	{
 		$this->define(($type=='txt' ? '!*' : '*'), $file);
 		$this->print_('*');
-	} 
-	function xfetch($file, $type='tpl') 
-	{ 
+	}
+	function xfetch($file, $type='tpl')
+	{
 		$this->define(($type=='txt' ? '!*' : '*'), $file);
-		return $this->fetch('*'); 
-	} 
+		return $this->fetch('*');
+	}
 
 
 // Below methods are deprecated.

@@ -19,9 +19,7 @@ class Controller {
 	}
 
 	function set($name,$value) {
-	    print_r($name);
-	    print_r($value);
-		//$this->_template->set($name,$value);
+	   $this->_tpl->print_($name,DS.$value.'.tpl');
 	}
 
 	function __destruct() {
