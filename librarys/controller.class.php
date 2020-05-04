@@ -23,7 +23,7 @@ class Controller {
 	              , 'body'=> domain.DS.$name.DS.$value.'.tpl'
 	              , 'footer'=>domain.DS.'include'.DS.'_footer.tpl'
 	    ));
-	   $tpl->assign(array('title'  =>'나의 php템플릿'));
+	   $this->_tpl->assign(array('title'  =>'나의 php템플릿'));
 	   $this->_tpl->print_('body');
 	}
 
