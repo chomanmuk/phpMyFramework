@@ -5,13 +5,13 @@
 class Template_
 {
 	var $compile_check = true;
-	var $compile_dir   = '_compile';
+	var $compile_dir   = ROOT.DS.'_compile';
 	var $compile_ext   = 'php';
 	var $skin          = '';
 	var $notice        = false;
 	var $path_digest   = false;
 
-	var $template_dir  = '_template';
+	var $template_dir  = ROOT.DS.'_template';
 	var $prefilter     = '';
 	var $postfilter    = '';
 	var $permission    = 0777;
