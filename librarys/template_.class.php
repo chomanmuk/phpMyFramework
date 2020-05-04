@@ -75,7 +75,7 @@ class Template_
 	}
 	function print_($fid, $scope = '', $sub = false)
 	{
-	    print_r(ROOT);
+
 		if ( ! isset($this->tpl_[$fid]) )
 		{
 			$this->exit_('Error #2', 'template id <b>'.$fid.'</b> is not defined');

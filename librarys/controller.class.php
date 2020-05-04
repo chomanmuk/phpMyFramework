@@ -19,7 +19,8 @@ class Controller {
 	}
 
 	function set($name,$value) {
-	   $this->_tpl->print_($value.'.tpl');
+	   $this->_tpl->define('page', $value.'.tpl');
+	   $this->_tpl->print_('page');
 	}
 
 	function __destruct() {
