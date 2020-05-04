@@ -11,7 +11,7 @@ class Template_
 	var $notice        = false;
 	var $path_digest   = false;
 
-	var $template_dir  = '_template'.DS.domain;
+	var $template_dir  = '_template';
 	var $prefilter     = '';
 	var $postfilter    = '';
 	var $permission    = 0777;
