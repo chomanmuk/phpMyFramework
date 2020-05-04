@@ -294,7 +294,7 @@ class Template_
 			return $compile_path;
 		}
 
-		$template_path = $this->template_dir.'/'.($this->skin?$this->skin.'/':'').$rel_path;
+		$template_path = ROOT.DS.$this->template_dir.'/'.($this->skin?$this->skin.'/':'').$rel_path;
 
 		if (@!is_file($template_path))
 		{
