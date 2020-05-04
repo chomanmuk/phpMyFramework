@@ -6,5 +6,5 @@ $url = $_GET['url'];
 if(!$url){
     $url="/main/view";
 }
-print_r($url);
+
 require_once (ROOT. DS . 'librarys' . DS . 'bootstrap.php');
