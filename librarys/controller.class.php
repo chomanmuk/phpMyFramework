@@ -19,7 +19,7 @@ class Controller {
 	}
 
 	function set($name,$value) {
-	   $this->_tpl->define('page', $value.'.tpl');
+	   $this->_tpl->define('page', $name.DS.$value.'.tpl');
 	   $this->_tpl->print_('page');
 	}
 
