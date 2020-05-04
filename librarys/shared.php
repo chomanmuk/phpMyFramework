@@ -58,10 +58,9 @@ function callHook() {
 
     $controllerName = $controller;
     $controller = ucwords($controller);
-    print_r($controller);
     $model = rtrim($controller, 's');
-    print_r("/".$model);
     $controller .= 'Controller';
+    $model      .= 'Model';
     $dispatch = new $controller($model,$controllerName,$action);
 
     if ((int)method_exists($controller, $action)) {
