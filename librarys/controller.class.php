@@ -19,8 +19,12 @@ class Controller {
 	}
 
 	function set($name,$value) {
-	   $this->_tpl->define('page', domain.DS.$name.DS.$value.'.tpl');
-	   $this->_tpl->print_('page');
+	    $this->_tpl->define(array('header'=>domain.DS.'include'.DS.'_header.tpl'
+	              , 'body'=> domain.DS.$name.DS.$value.'.tpl'
+	              , 'footer'=>domain.DS.'include'.DS.'_footer.tpl'
+	    ));
+	   $tpl->assign(array('title'  =>'나의 php템플릿'));
+	   $this->_tpl->print_('body');
 	}
 
 	function __destruct() {
