@@ -5,13 +5,13 @@
 class Template_
 {
 	var $compile_check = true;
-	var $compile_dir   = '_compile';
+	var $compile_dir   = './_compile';
 	var $compile_ext   = 'php';
 	var $skin          = '';
 	var $notice        = false;
 	var $path_digest   = false;
 
-	var $template_dir  = '_template';
+	var $template_dir  = './_template';
 	var $prefilter     = '';
 	var $postfilter    = '';
 	var $permission    = 0777;
@@ -19,7 +19,7 @@ class Template_
 	var $auto_constant = false;
 
 	var $caching       = false;
-	var $cache_dir     = '_cache';
+	var $cache_dir     = './_cache';
 	var $cache_expire  = 3600;
 
 	var $var_=array(''=>array());
@@ -294,7 +294,7 @@ class Template_
 			return $compile_path;
 		}
 
-		$template_path = ROOT.DS.$this->template_dir.'/'.($this->skin?$this->skin.'/':'').$rel_path;
+		$template_path = $this->template_dir.'/'.($this->skin?$this->skin.'/':'').$rel_path;
 
 		if (@!is_file($template_path))
 		{
