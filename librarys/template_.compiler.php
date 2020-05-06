@@ -80,6 +80,8 @@ class Template_Compiler_
 
 		$compile_path	= $compile_base.'.'.$this->compile_ext;	// absolute or relative path
 
+		print_r($compile_path);
+
 		if (!@is_file($compile_path)) {
 
 			$cpl_rel_path	= substr($compile_path, strlen($this->compile_dir)+1);
@@ -716,8 +718,6 @@ class Template_Compiler_
 		$prev_is_func=0;
 		$m=array();
 
-
-		print_r("expression : ". $expression);
 
 		for ($xpr='',$i=0; strlen($expression); $expression=substr($expression, strlen($m[0])),$i++) {	//
 			if (!preg_match('/^

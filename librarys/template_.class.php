@@ -133,7 +133,6 @@ class Template_
 				if ($this->notice)
 				{
 
-
 					error_reporting( $this->_php_error_reporting | E_NOTICE );
 					set_error_handler('_template_notice_handler');
 					$this->_include_tpl($compile_path, $fid, $scope);
@@ -141,7 +140,7 @@ class Template_
 				}
 				else
 				{
-				    print_r("compile_path  : ".$compile_path);
+
 					error_reporting( $this->_php_error_reporting & ~E_NOTICE );
 					$this->_include_tpl($compile_path, $fid, $scope);
 				}
@@ -247,9 +246,6 @@ class Template_
 	{
 		$TPL_VAR = &$this->var_[$TPL_SCP];
 
-		print_r($TPL_SCP);
-		print_r($this->var_);
-		print_r($TPL_VAR);
 
 		if (false === include $TPL_CPL)
 		{
