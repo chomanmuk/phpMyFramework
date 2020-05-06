@@ -21,7 +21,6 @@ class Controller {
 	function set($name,$value) {
 	   $this->_tpl->define('layout', domain.DS.$name.DS.$value.'.tpl');
 	   $this->_tpl->assign(array('title'  =>'나의 php템플릿'));
-	   $this->_tpl->setCache('source', 3600);
 	   $this->_tpl->print_('body');
 	}
 
