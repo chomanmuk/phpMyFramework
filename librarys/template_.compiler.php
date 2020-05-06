@@ -379,7 +379,7 @@ class Template_Compiler_
 				if ($mark_tpl!==$this->_index-2) break;
 				if (!$result=$this->_compile_statement($this->_split[$this->_index-1])) break;
 				if (is_array($result)) {
-				    print_r($result);
+				 //   print_r($result);
 					// 1:echo, 2:control, 4:include, 8:division, 16:escape
 					if ($this->mark_php) {
 						if ($result[0]===1) {
@@ -449,7 +449,7 @@ class Template_Compiler_
 		}
 
 		$source=trim(implode('',$this->_split));
-		print_r($source);
+	//	print_r($source);
 		$plugins = $this->_get_function().$this->_get_class();
 		$size_of_top_loop = empty($this->_size_info[1]) ? '' : $this->_get_loop_size(1);
 
