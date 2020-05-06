@@ -1,6 +1,11 @@
 <?php
 
-function include_css($css='./')
+function include_css($css='./', $mode = 'system')
 {
-    return '<link href="/public/css/'.$css.'" rel="stylesheet">';
+    if($mode == "system"){
+        $src = "/public/css/".$css;
+    }else{
+        $src = "/_template/".domain."/include/css/".$css;
+    }
+    return '<link href="'.$src.'" rel="stylesheet">';
 }
