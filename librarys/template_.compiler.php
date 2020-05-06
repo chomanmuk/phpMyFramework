@@ -379,7 +379,7 @@ class Template_Compiler_
 				if ($mark_tpl!==$this->_index-2) break;
 				if (!$result=$this->_compile_statement($this->_split[$this->_index-1])) break;
 				if (is_array($result)) {
-
+				    print_r($result);
 					// 1:echo, 2:control, 4:include, 8:division, 16:escape
 					if ($this->mark_php) {
 						if ($result[0]===1) {
@@ -390,7 +390,7 @@ class Template_Compiler_
 							$this->report('Error #5', 'template control statement <b>{'.$this->statement.'}</b> in php code is not available', true, true);
 						}
 					} elseif ($result[0]===8) {
-					    print_r($result);
+
 						if ($result[1]) {
 
 							if (in_array($result[1], $divnames)) {
