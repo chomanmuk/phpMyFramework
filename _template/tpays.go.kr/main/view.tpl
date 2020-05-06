@@ -1,2 +1,4 @@
-<!--{=include_once('include/header.tpl') }-->
+<!--{# header }-->
  tpays.go.kr 뷰템플릿
+
+ <!--{# footer }-->

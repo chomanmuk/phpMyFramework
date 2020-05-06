@@ -378,6 +378,7 @@ class Template_Compiler_
 			case '}'   :
 				if ($mark_tpl!==$this->_index-2) break;
 				if (!$result=$this->_compile_statement($this->_split[$this->_index-1])) break;
+
 				if (is_array($result)) {
 				 //   print_r($result);
 					// 1:echo, 2:control, 4:include, 8:division, 16:escape
@@ -502,7 +503,7 @@ class Template_Compiler_
 	}
 	function _compile_statement($statement)
 	{
-	    print_r("statement : ".$statement);
+
 		$match=array();
 		preg_match('/^(\\\\*)\s*(:\?|[=#@?:\/+])?(.*)$/s', $statement, $match);
 		$src=preg_split('/('.$this->quoted_str.')/', $match[3], -1, PREG_SPLIT_DELIM_CAPTURE);
@@ -525,7 +526,7 @@ class Template_Compiler_
 			default : return $this->_compile_expression($src,1,0)!==0 ? array(16, substr($statement,1)) : 0; // = @ :?
 			}
 		}
-		print_r(" % " .$match[2]);
+
 		switch ($match[2]) {
 		case ''  : return (($xpr=$this->_compile_expression($src,0,1))===0) ? 0 : array(1, 'echo '.$xpr);
 		case '=' : return (($xpr=$this->_compile_expression($src,0,0))===0) ? 0 : array(1, 'echo '.$xpr);
