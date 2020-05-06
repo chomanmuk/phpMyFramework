@@ -91,6 +91,7 @@ class Template_
 			return;
 		}
 
+		print_r($file_type);
 
 		if ($file_type === 'txt')
 		{
