@@ -1,3 +1,3 @@
 {# header }
-뷰템플릿
+ tpays.kr 뷰템플릿
 {# footer }
