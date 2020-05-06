@@ -67,7 +67,7 @@ class Template_Compiler_
 		$this->all_functions =array_merge(
 			$functions['internal'],
 			$functions['user'],
-		    array('isset','empty','eval','list','array','include','include_tpl','include_script', 'include_img','require','include_once','require_once')
+		    array('isset','empty','eval','list','array','include','include','include', 'include','require','include_once','require_once')
 		);
 
 
