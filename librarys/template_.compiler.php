@@ -117,6 +117,9 @@ class Template_Compiler_
 		}
 		while ($plugin_file = $d->read()) {
 			$plugin_path = $this->plugin_dir .'/'. $plugin_file;
+
+			print_r($plugin_path);
+
 			if (!is_file($plugin_path) || !preg_match('/^(object|function|prefilter|postfilter)\.([^.]+)\.php$/i', $plugin_file, $match)) continue;
 			$plugin =strtolower($match[2]);
 			if ($match[1] === 'object') {
@@ -167,7 +170,7 @@ class Template_Compiler_
 	// remove UTF-8 BOM
 
 		$source = preg_replace('/^\xEF\xBB\xBF/', '', $source);
-		print_r($source);
+
 	// find that php version is greater than or equal to 5.4
 
 		$gt_than_or_eq_to_5_4 = defined('PHP_VERSION')  and  version_compare(PHP_VERSION, '5.4.0', '>=');
@@ -751,7 +754,7 @@ class Template_Compiler_
 						} elseif ($m[2]==='tpl_') {
 							$xpr.= '$TPL_TPL';
 						} elseif ($m[2][0]==='_') {
-						    print_r($m[2]);
+
 							if ($this->safe_mode) $this->exp_error[]=array(4, $m[2]);
 							$xpr.= in_array($m[2], $this->auto_globals) ? '$'.$m[2] : '$GLOBALS["'.substr($m[2],1).'"]';
 						} else {
