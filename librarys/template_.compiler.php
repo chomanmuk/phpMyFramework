@@ -449,7 +449,7 @@ class Template_Compiler_
 		}
 
 		$source=trim(implode('',$this->_split));
-	//	print_r($source);
+
 		$plugins = $this->_get_function().$this->_get_class();
 		$size_of_top_loop = empty($this->_size_info[1]) ? '' : $this->_get_loop_size(1);
 
@@ -524,6 +524,7 @@ class Template_Compiler_
 			default : return $this->_compile_expression($src,1,0)!==0 ? array(16, substr($statement,1)) : 0; // = @ :?
 			}
 		}
+		print_r($match[2]);
 		switch ($match[2]) {
 		case ''  : return (($xpr=$this->_compile_expression($src,0,1))===0) ? 0 : array(1, 'echo '.$xpr);
 		case '=' : return (($xpr=$this->_compile_expression($src,0,0))===0) ? 0 : array(1, 'echo '.$xpr);
