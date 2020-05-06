@@ -715,6 +715,10 @@ class Template_Compiler_
 		$prev_is_operand=0;
 		$prev_is_func=0;
 		$m=array();
+
+
+		print_r($expression);
+
 		for ($xpr='',$i=0; strlen($expression); $expression=substr($expression, strlen($m[0])),$i++) {	//
 			if (!preg_match('/^
 				((?:\.\s*)+)
