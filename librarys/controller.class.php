@@ -19,9 +19,9 @@ class Controller {
 	}
 
 	function set($name,$value) {
-	    $this->_tpl->define(array('header'=>'../public/include'.DS.'_header.tpl'
+	    $this->_tpl->define(array('header'=>domain.DS.'include'.DS.'_header.tpl'
 	              , 'body'=> domain.DS.$name.DS.$value.'.tpl'
-	              , 'footer'=>'../public/include'.DS.'_footer.tpl'
+	              , 'footer'=>domain.DS.'include'.DS.'_footer.tpl'
 	    ));
 	   $this->_tpl->assign(array('title'  =>'나의 php템플릿'));
 	   $this->_tpl->print_('body');
