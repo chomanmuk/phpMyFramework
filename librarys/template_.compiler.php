@@ -717,7 +717,7 @@ class Template_Compiler_
 		$m=array();
 
 
-		print_r($expression);
+		print_r("expression : ". $expression);
 
 		for ($xpr='',$i=0; strlen($expression); $expression=substr($expression, strlen($m[0])),$i++) {	//
 			if (!preg_match('/^
