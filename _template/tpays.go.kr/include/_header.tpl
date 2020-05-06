@@ -8,7 +8,7 @@
     <title>{=title}</title>
 
     <!-- 부트스트랩 -->
-    <!--{=system_css('bootstrap.css') }-->
+    <!--{=include_css('bootstrap.css') }-->
     <link href="/public/css/bootstrap.css" rel="stylesheet">
 	<link href="/public/css/bootstrap-theme.css" rel="stylesheet">
     <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
