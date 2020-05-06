@@ -383,7 +383,6 @@ class Template_Compiler_
 				if (is_array($result)) {
 
 					// 1:echo, 2:control, 4:include, 8:division, 16:escape
-				    print_r($result);
 					if ($this->mark_php) {
 						if ($result[0]===1) {
 							$this->_split[$this->_index-1]=substr($result[1], 4);
@@ -394,6 +393,8 @@ class Template_Compiler_
 						}
 					} elseif ($result[0]===8) {
 						if ($result[1]) {
+						    print_r($divnames);
+						    print_r($result[1]);
 							if (in_array($result[1], $divnames)) {
 								$this->report('Error #6', 'template division id <b>'.$result[1].'</b> is overlapped', true, true);
 								$this->exit_();
@@ -405,6 +406,7 @@ class Template_Compiler_
 							$this->in_div=$result[1];
 							$this->func_list[$result[1]]=array();
 							$this->obj_list[$result[1]]=array();
+
 						} elseif ($num=count($division) and !isset($division[--$num]['end'])) {
 							$division[$num]['end']=$this->_index-1;
 							$this->in_div='';
