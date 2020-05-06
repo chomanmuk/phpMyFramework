@@ -91,7 +91,6 @@ class Template_
 			return;
 		}
 
-		print_r($file_type);
 
 		if ($file_type === 'txt')
 		{
@@ -117,6 +116,8 @@ class Template_
 			{
 				$scope = $fid;
 			}
+
+			print_r("$sub  : ".$sub);
 
 			if ( $sub )
 			{
@@ -239,6 +240,8 @@ class Template_
 	function _include_tpl($TPL_CPL, $TPL_TPL, $TPL_SCP)
 	{
 		$TPL_VAR = &$this->var_[$TPL_SCP];
+
+		print_r($TPL_VAR);
 
 		if (false === include $TPL_CPL)
 		{
