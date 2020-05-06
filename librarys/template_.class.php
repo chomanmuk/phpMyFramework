@@ -117,18 +117,23 @@ class Template_
 				$scope = $fid;
 			}
 
-			print_r("$sub  : ".$sub);
+
 
 			if ( $sub )
 			{
+			    print_r("1  : ".$sub);
 				$this->_include_tpl($compile_path, $fid, $scope);
 			}
 			else
 			{
+			    print_r("2  : ".$sub);
+
 				$this->_php_error_reporting = error_reporting();
 
 				if ($this->notice)
 				{
+				    print_r("3  : ".$sub);
+
 					error_reporting( $this->_php_error_reporting | E_NOTICE );
 					set_error_handler('_template_notice_handler');
 					$this->_include_tpl($compile_path, $fid, $scope);
@@ -136,6 +141,7 @@ class Template_
 				}
 				else
 				{
+				    print_r("4  : ".$sub);
 					error_reporting( $this->_php_error_reporting & ~E_NOTICE );
 					$this->_include_tpl($compile_path, $fid, $scope);
 				}
