@@ -1,6 +1,6 @@
 <?php
 
-function include_js($js, $mode='system'){
+function include_js($js, $mode='user'){
     if($mode == "system"){
         $src = "/public/js/".$js;
     }if($mode == "url"){

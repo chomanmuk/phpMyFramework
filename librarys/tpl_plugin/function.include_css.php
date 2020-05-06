@@ -1,6 +1,6 @@
 <?php
 
-function include_css($css='./', $mode = 'system')
+function include_css($css='./', $mode = 'user')
 {
     if($mode == "system"){
         $src = "/public/css/".$css;
