@@ -117,9 +117,6 @@ class Template_Compiler_
 		}
 		while ($plugin_file = $d->read()) {
 			$plugin_path = $this->plugin_dir .'/'. $plugin_file;
-
-			print_r($plugin_path);
-
 			if (!is_file($plugin_path) || !preg_match('/^(object|function|prefilter|postfilter)\.([^.]+)\.php$/i', $plugin_file, $match)) continue;
 			$plugin =strtolower($match[2]);
 			if ($match[1] === 'object') {
@@ -386,7 +383,7 @@ class Template_Compiler_
 				if (is_array($result)) {
 
 					// 1:echo, 2:control, 4:include, 8:division, 16:escape
-
+				    print_r($result);
 					if ($this->mark_php) {
 						if ($result[0]===1) {
 							$this->_split[$this->_index-1]=substr($result[1], 4);
