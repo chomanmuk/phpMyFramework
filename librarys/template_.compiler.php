@@ -67,7 +67,7 @@ class Template_Compiler_
 		$this->all_functions =array_merge(
 			$functions['internal'],
 			$functions['user'],
-		    array('isset','empty','eval','list','array','include','include','include', 'include','require','include_once','require_once')
+		    array('isset','empty','eval','list','array','include','require','include_once','require_once')
 		);
 
 
@@ -79,8 +79,6 @@ class Template_Compiler_
 		}
 
 		$compile_path	= $compile_base.'.'.$this->compile_ext;	// absolute or relative path
-
-		print_r($compile_path);
 
 		if (!@is_file($compile_path)) {
 
@@ -392,6 +390,7 @@ class Template_Compiler_
 							$this->report('Error #5', 'template control statement <b>{'.$this->statement.'}</b> in php code is not available', true, true);
 						}
 					} elseif ($result[0]===8) {
+					    print_r($result);
 						if ($result[1]) {
 
 							if (in_array($result[1], $divnames)) {
