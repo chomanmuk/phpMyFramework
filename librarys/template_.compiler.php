@@ -502,7 +502,7 @@ class Template_Compiler_
 	}
 	function _compile_statement($statement)
 	{
-	    print_r("statement".$statement);
+	    print_r("statement : ".$statement);
 		$match=array();
 		preg_match('/^(\\\\*)\s*(:\?|[=#@?:\/+])?(.*)$/s', $statement, $match);
 		$src=preg_split('/('.$this->quoted_str.')/', $match[3], -1, PREG_SPLIT_DELIM_CAPTURE);
@@ -525,11 +525,11 @@ class Template_Compiler_
 			default : return $this->_compile_expression($src,1,0)!==0 ? array(16, substr($statement,1)) : 0; // = @ :?
 			}
 		}
-		print_r($match[2]);
+		print_r(" % " .$match[2]);
 		switch ($match[2]) {
 		case ''  : return (($xpr=$this->_compile_expression($src,0,1))===0) ? 0 : array(1, 'echo '.$xpr);
 		case '=' : return (($xpr=$this->_compile_expression($src,0,0))===0) ? 0 : array(1, 'echo '.$xpr);
-		case '^' : return (($xpr=$this->_compile_expression($src,0,0))===0) ? 0 : array(1, 'echo 111'.$xpr);
+		case '^' : return (($xpr=$this->_compile_expression($src,0,0))===0) ? 0 : array(1, 'echo '.$xpr);
 		case ':?': return (($xpr=$this->_compile_expression($src,0,0))===0) ? 0 : array(2, '}elseif('.$xpr.'){'); // deprecated
 		case '+' : return !strlen($src)||preg_match('/^[A-Z_a-z\x7f-\xff][\w\x7f-\xff]*$/', $src) ? array(8, $src) : 0;
 		case '#' : return preg_match('/^[A-Z_a-z\x7f-\xff][\w\x7f-\xff]*$/',$src) ? array(4, '$this->print_("'.$src.'",$TPL_SCP,1);') : 0;
