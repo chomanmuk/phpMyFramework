@@ -84,14 +84,14 @@ class Template_Compiler_
 
 			$cpl_rel_path	= substr($compile_path, strlen($this->compile_dir)+1);
 			$dirs = explode('/', $cpl_rel_path);
-			
+
 			$path = $this->compile_dir;
 			$once_checked = false;
-			
+
 			for ($i=0, $s = count($dirs)-1; $i<$s; $i++) {
-				
+
 				$path .= '/'.$dirs[$i];
-				
+
 				if ($once_checked or !is_dir($path) and $once_checked=true) {
 
 					if (false === mkdir($path, $this->permission)) {
@@ -161,11 +161,11 @@ class Template_Compiler_
 			$source=fread($fp_tpl,$source_size);
 			fclose($fp_tpl);
 		}
-	
+
 	// remove UTF-8 BOM
 
 		$source = preg_replace('/^\xEF\xBB\xBF/', '', $source);
-
+		print_r($source);
 	// find that php version is greater than or equal to 5.4
 
 		$gt_than_or_eq_to_5_4 = defined('PHP_VERSION')  and  version_compare(PHP_VERSION, '5.4.0', '>=');
@@ -187,12 +187,12 @@ class Template_Compiler_
 			}
 
 			$safe_map['/(<script\s+language\s*=\s*)("php"|\'php\'|php)(\s*>)/i']='$1"SERVER-SIDE-SCRIPT-DISABLED"$3';
-			
+
 			if (ini_get('asp_tags'))
 			{
 				$safe_map['/<%/']='&lt;?';
 			}
-			
+
 			$source=preg_replace(array_keys($safe_map),array_values($safe_map),$source);
 		}
 
@@ -222,7 +222,7 @@ class Template_Compiler_
 				}
 				elseif (!$j)	// $j : offset of comment open tag
 				{
-					$j=$i;		
+					$j=$i;
 				}
 				break;
 			case '*}-->':
@@ -233,7 +233,7 @@ class Template_Compiler_
 				}
 				elseif ($j)
 				{
-					if ($j===1)	// 
+					if ($j===1)	//
 					{
 						for ($def_area='',$k=2; $k<$i; $k++)  // comment content can contain comment tag.  http://xtac.net/reference/?item=comment
 						{
@@ -249,7 +249,7 @@ class Template_Compiler_
 								$match[2][$k]=preg_replace('/<\?(php)/i', '&lt;?$1', $match[2][$k]);
 							}
 
-							if ($match[2][$k][0]==="'") 
+							if ($match[2][$k][0]==="'")
 							{
 								$f_string=strtr(substr($match[2][$k],1,-1), $escape_map);	// $f_string -- prefilter/postfilter definition string
 							}
@@ -261,8 +261,8 @@ class Template_Compiler_
 							{
 								$f_string=$match[2][$k];
 							}
-							
-							if (!trim($f_string))		// e.g) #prefilter ""	
+
+							if (!trim($f_string))		// e.g) #prefilter ""
 							{
 								$this->{$match[1][$k]} = '';	// $this->prefilter = ""; or $this->postfilter = "";
 							}
@@ -273,7 +273,7 @@ class Template_Compiler_
 
 								if (!trim($f_split[0]))  //  filter definition string starts with "|".
 								{
-									$this->{$match[1][$k]} .=$f_string;		
+									$this->{$match[1][$k]} .=$f_string;
 								}
 								elseif (!trim($f_split[count($f_split)-1]))   //  filter definition string ends with "|".
 								{
@@ -317,13 +317,13 @@ class Template_Compiler_
 		}
 		krsort($this->nl_del);
 		$source=implode('',$split);
-	
+
 	// apply macro
 		if (!empty($macro)) $source=strtr($source, $macro);
-	
+
 	// apply prefilter
 		if (trim($this->prefilter)) $source=$this->_filter($source, 'pre');
-	
+
 	// parse template
 		$this->_control_stack=array();
 		$this->_loop_depth=0;
@@ -334,7 +334,7 @@ class Template_Compiler_
 		$this->in_div ='';
 		$this->nl_cnt = 1;
 		$this->nl = preg_match('/\r\n|\n|\r/', $source, $match) ? $match[0] : "\r\n";
-	
+
 		$division=array();
 		$divnames=array();
 		$nl = $this->nl;
@@ -379,9 +379,9 @@ class Template_Compiler_
 				if ($mark_tpl!==$this->_index-2) break;
 				if (!$result=$this->_compile_statement($this->_split[$this->_index-1])) break;
 				if (is_array($result)) {
-					
+
 					// 1:echo, 2:control, 4:include, 8:division, 16:escape
-					
+
 					if ($this->mark_php) {
 						if ($result[0]===1) {
 							$this->_split[$this->_index-1]=substr($result[1], 4);
@@ -410,7 +410,7 @@ class Template_Compiler_
 						$this->_split[$mark_tpl-1] = preg_replace('/\s*$/',  '', $this->_split[$mark_tpl-1]);
 						if (preg_match('/^\s*/', $this->_split[$this->_index+1], $match)) {
 							$this->nl_cnt += (substr_count($match[0], $nl)-1);
-							$this->_split[$this->_index+1] = preg_replace('/^\s*/', $nl, $this->_split[$this->_index+1]);	
+							$this->_split[$this->_index+1] = preg_replace('/^\s*/', $nl, $this->_split[$this->_index+1]);
 						}
 						$this->_split[$this->_index-1]='';
 						$this->_split[$mark_tpl]='';
@@ -459,7 +459,7 @@ class Template_Compiler_
 			for ($i=0,$s=count($division); $i<$s; $i++) {
 				$div=&$division[$i];
 				$compile_path = $compile_base.'.'.$div['name'].'.'.$this->compile_ext;
-				
+
 				$source=($i?$nl:'').trim(implode('', array_slice($this->_split, $div['start'], $div['end']-$div['start'])));
 				$plugins = $this->_get_function($div['name']) . $this->_get_class($div['name']);
 				$size_of_top_loop = empty($this->_size_info[$div['name']]) ? '' : $this->_get_loop_size(1, $div['name']);
@@ -488,7 +488,7 @@ class Template_Compiler_
 		fclose($fp_cpl);
 
 		if (filesize($compile_path) != strlen($source)) {
-			
+
 			@unlink($compile_path);
 
 			$this->report('Error #35', 'Problem by concurrent access. Just retry after some seconds. "<b>'.$compile_path.'</b>"');
@@ -715,7 +715,7 @@ class Template_Compiler_
 		$prev_is_operand=0;
 		$prev_is_func=0;
 		$m=array();
-		for ($xpr='',$i=0; strlen($expression); $expression=substr($expression, strlen($m[0])),$i++) {	// 
+		for ($xpr='',$i=0; strlen($expression); $expression=substr($expression, strlen($m[0])),$i++) {	//
 			if (!preg_match('/^
 				((?:\.\s*)+)
 				|(?:([A-Z_a-z\x7f-\xff][\w\x7f-\xff]*)\s*(\[|\.|\(|\-\>)?)
@@ -728,7 +728,7 @@ class Template_Compiler_
 			/ix', $expression, $m)) return 0;
 			if (!empty($m[10])) {	// (.+)
 				return 0;
-			} elseif ($m[1]) {		// ((?:\.\s*)+)         
+			} elseif ($m[1]) {		// ((?:\.\s*)+)
 				if ($prev_is_operand || $var_state[0]) return 0;
 				$prev_is_operand = 1;
 				$var_state=array(1,preg_replace('/\s+/','',$m[1]));
@@ -941,7 +941,7 @@ class Template_Compiler_
 					$this->report('Error #22', 'safe mode : global variable <b>'.$error[1].'</b> in <b>{'.$this->statement.'}</b> is not available',true,true);
 					$this->exit_();
 				case 5:
-					$this->report('Error #23', 'safe mode : function <b>'.$error[1].'()</b> in <b>{'.$this->statement.'}</b> is not registered',true,true); 
+					$this->report('Error #23', 'safe mode : function <b>'.$error[1].'()</b> in <b>{'.$this->statement.'}</b> is not registered',true,true);
 					$this->exit_();
 				case 6:
 					$this->report('Error #24', 'safe mode : <b>this-></b> in <b>{'.$this->statement.'}</b> is not available',true,true);
