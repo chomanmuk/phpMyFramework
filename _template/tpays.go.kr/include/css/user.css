@@ -1,1 +1,5 @@
 .navbar { margin-bottom:0px; }
+
+@media (min-width: 768px)
+.navbar-login { float: right; }
+.navbar-login li { min-width:80px;text-align:center;padding-left:10px;padding-right:10px; }

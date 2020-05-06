@@ -23,10 +23,12 @@
 	              </ul>
 	            </li>
 	          </ul>
+	          <ul class="nav navbar-login">
+	          	<li>Join</li>
+	          	<li>Login</li>
+	          </ul>
 	        </div><!--/.nav-collapse -->
-	        <div class="navbar-header">
-	          <a class="navbar-brand" href="#">login</a>
-	        </div>
+
 	      </div>
 	</nav>
 <!--// 네비게이션바  -->
