@@ -393,8 +393,7 @@ class Template_Compiler_
 						}
 					} elseif ($result[0]===8) {
 						if ($result[1]) {
-						    print_r($divnames);
-						    print_r($result[1]);
+
 							if (in_array($result[1], $divnames)) {
 								$this->report('Error #6', 'template division id <b>'.$result[1].'</b> is overlapped', true, true);
 								$this->exit_();
@@ -451,6 +450,7 @@ class Template_Compiler_
 		}
 
 		$source=trim(implode('',$this->_split));
+		print_r($source);
 		$plugins = $this->_get_function().$this->_get_class();
 		$size_of_top_loop = empty($this->_size_info[1]) ? '' : $this->_get_loop_size(1);
 
