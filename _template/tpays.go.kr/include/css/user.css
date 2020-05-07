@@ -1,6 +1,6 @@
 .navbar { margin-bottom:0px; }
-.navbar-login {float:left;width:auto;display:inline-block  }
-.navbar-login li { min-width:80px;text-align:center;}
+.navbar-login {float:right;width:auto; }
+.navbar-login li { min-width:80px;text-align:center;display: inline-block;}
 .navbar-login > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
