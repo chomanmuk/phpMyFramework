@@ -2,8 +2,14 @@
 <!-- 네비게이션바  -->
 	 <nav class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container">
+	        	<!-- 로고 -->
 	        	<div class="logo" ><img src="{=image('/logo/logo.png')}" ></div>
+	        	<!--// 로고 -->
+	        	<!-- 모바일메뉴 -->
+	        	<div class="mobile_menu" ><img src="{=image('/btn_allmenu.png')}" ></div>
+	        	<!--// 모바일메뉴 -->
 	      </div>
+
 	</nav>
 <!--// 네비게이션바  -->
 <!-- 본문비주얼  -->
