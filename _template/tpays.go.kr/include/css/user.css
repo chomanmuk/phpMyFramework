@@ -70,9 +70,9 @@ body{background-color:#fff;}
 .container .memu {list-style:none;position: absolute;left:50%;line-height:40px;margin-bottom:20px;margin-top:20px;margin-left:-370px;font-family: 'NanumBarunGothic'}
 .container .memu li {min-width:120px;text-align:center;display:inline-block;}
 .container .memu li:hover .submenu {display:block;}
-.container .memu li a { font-size:18px;color:#FFFFFF;font-weight:400;text-decoration: none;padding-left:10px;padding-right:10px; }
-.container .memu li .submenu {float:left;position: absolute;width:auto;background-color:#FFFFFF;}
-.container .memu li .submenu ul { padding-left:10px;margin-top:16px;padding-top:20px;padding-bottom:30px;border-top:1px #bb005e solid;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+.container .memu li a { font-size:16px;color:#FFFFFF;font-weight:400;text-decoration: none;padding-left:10px;padding-right:10px; }
+.container .memu li .submenu {float:left;position: absolute;width:auto;background-color:#FFFFFF;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+.container .memu li .submenu ul { padding-left:10px;margin-top:16px;padding-top:20px;padding-bottom:30px;border-top:1px #bb005e solid;}
 .container .memu li .submenu li { display:block;line-height:25px;text-align:left;margin-top:5px;margin-bottom:5px; }
 .container .memu li .submenu li a { font-size:14px;color:#444;  }
 .container .memu li .submenu li a:hover { color:#bb005e; }
