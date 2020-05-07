@@ -8,7 +8,7 @@ function setReporting() {
 			error_reporting(E_ALL);
 			ini_set('display_errors','Off');
 			ini_set('log_errors', 'On');
-			ini_set('error_log', ROOT.DS.'tmp'.DS.'_logs'.DS.'error_'.date("Y-m-d").'_.log');
+			ini_set('error_log', ROOT.DS.'tmp'.DS.'_logs'.DS.'error_'.domain.'_'.date("Y-m-d").'.log');
 		}
 }
 
