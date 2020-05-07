@@ -44,7 +44,7 @@
 	      </div>
 			<script type="text/javascript">
 		    $(document).ready(function(){
-		    	$('#topmenu > li').on("mousein", function(){ $(this).find(".submenu").slideDown(); })
+		    	$('#topmenu > li').mouseover(function(){ $(this).find(".submenu").slideDown(); })
 		    });
 		    </script>
 	</nav>
