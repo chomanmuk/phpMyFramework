@@ -3,12 +3,13 @@
 .navbar-inverse {border-color: #FFFFFF;opacity: 1;background-color:rgba(0, 0, 0, 0);border:0px;}
 .container {width: 96%;height:auto; }
 
-.container .logo {padding-top:25px;padding-bottom:25px;}
+.container .logo {padding-top:25px;padding-bottom:25px;float: left;width:auto;}
 
-.mobile_menu {float:right;}
+.container .mobile_menu {float:right;padding-top:25px;padding-bottom:25px;}
 
 .navbar:hover { background-color:#FFFFFF; }
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
+.navbar:hover .container .mobile_menu { content: url(../../include/img/btn_allmenu_on.png); }
 
 /*** main visual ***/
 .main_visual {background-color: #000000;min-height:650px;width:100%;}
