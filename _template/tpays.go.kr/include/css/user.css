@@ -6,16 +6,17 @@
 .container .logo {padding-top:25px;padding-bottom:25px;float: left;width:auto;}
 .container .mobile_menu {float:right;padding-top:25px;padding-bottom:25px;}
 .container .memu {list-style:none;position: absolute;left:50%;line-height:40px;margin-bottom:20px;margin-top:20px;margin-left:-370px;}
-.container .memu li {min-width:80px;text-align:center;display:inline-block;font-size:24px;color:#FFFFFF;font-weight:400;}
-
+.container .memu li {min-width:80px;text-align:center;display:inline-block;}
+.container .memu li a { font-size:24px;color:#FFFFFF;font-weight:400; }
+.container .memu li a:hover { color:#444;}
 .navbar:hover { background-color:#FFFFFF; }
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
-.navbar:hover .container .memu li { color:#444; }
 
 @media (max-width: 630px) {
  	.navbar .logo img { content: url(../../include/img/logo/logo_m.png);width:160px; }
 	.navbar .container .mobile_menu img { content: url(../../include/img/btn_allmenu_m.png);width:30px;}
+	.container .memu {display:none;}
 }
 
 /*** main visual ***/
