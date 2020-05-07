@@ -1,5 +1,8 @@
-.navbar-brand { height:40px; }
+
 .navbar { margin-bottom:0px; }
+.container {
+    width: 90%;
+}
 .navbar-login {float:right;width:auto; }
 .navbar-login li { min-width:80px;text-align:center;display: inline-block;}
 .navbar-login > li > a {
