@@ -11,7 +11,12 @@
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu { content: url(../../include/img/btn_allmenu_on.png); }
 
+@media (min-width: 768px) {
+ 	.navbar .logo img { content: url(../../include/img/logo/logo_m.png); }
+	.navbar .container .mobile_menu { content: url(../../include/img/btn_allmenu_m.png); }
+}
+
 /*** main visual ***/
-.main_visual {background-color: #000000;min-height:650px;width:100%;}
+.main_visual {background-color: #000000;height:auto;width:100%;}
 .main_visual .item { position: absolute;z-index:9;width:100%;}
 .main_visual .item img {width:100%;}
