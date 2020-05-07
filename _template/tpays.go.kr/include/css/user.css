@@ -11,7 +11,7 @@
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu { content: url(../../include/img/btn_allmenu_on.png); }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
  	.navbar .logo img { content: url(../../include/img/logo/logo_m.png); }
 	.navbar .container .mobile_menu { content: url(../../include/img/btn_allmenu_m.png); }
 }
