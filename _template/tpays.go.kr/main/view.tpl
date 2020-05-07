@@ -6,9 +6,35 @@
 	        	<div class="logo" ><a href="#"><img src="{=image('/logo/logo.png')}" ></a></div>
 	        	<!--// 로고 -->
 				<ul class="memu" >
-					<li><a href="#" >회사소개</a></li>
-					<li><a href="#" >사업영역</a></li>
-					<li><a href="#" >경영정보</a></li>
+					<li><a href="#" >회사소개</a>
+						<div class="submenu">
+							<ul>
+								<li><a href="#">CEO인사말</a></li>
+								<li><a href="#">연혁</a></li>
+								<li><a href="#">VISION</a></li>
+								<li><a href="#">조직도</a></li>
+								<li><a href="#">CI</a></li>
+								<li><a href="#">오시는길</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" >사업영역</a>
+						<div class="submenu">
+							<ul>
+								<li><a href="#">주요사업소계</a></li>
+								<li><a href="#">계열사/제휴사</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#" >경영정보</a>
+						<div class="submenu">
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">재무성과</a></li>
+								<li><a href="#">공시정보</a></li>
+							</ul>
+						</div>
+					</li>
 					<li><a href="#" >홍보센터</a></li>
 					<li><a href="#" >채용정보</a></li>
 				</ul>
