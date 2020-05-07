@@ -7,12 +7,11 @@
 .container .mobile_menu {float:right;padding-top:25px;padding-bottom:25px;}
 .container .memu {list-style:none;position: absolute;left:50%;line-height:40px;margin-bottom:20px;margin-top:20px;margin-left:-370px;}
 .container .memu li {min-width:80px;text-align:center;display:inline-block;}
-.container .memu li a { font-size:24px;color:#FFFFFF;font-weight:400; }
-.container .memu li a:hover { color:#444;}
+.container .memu li a { font-size:24px;color:#FFFFFF;font-weight:400;text-decoration: none;padding-left:10px;padding-right:10px; }
 .navbar:hover { background-color:#FFFFFF; }
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
-
+.navbar:hover .container .memu li a { color:#444;}
 @media (max-width: 630px) {
  	.navbar .logo img { content: url(../../include/img/logo/logo_m.png);width:160px; }
 	.navbar .container .mobile_menu img { content: url(../../include/img/btn_allmenu_m.png);width:30px;}
