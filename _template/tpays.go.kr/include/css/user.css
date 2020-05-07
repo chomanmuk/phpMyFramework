@@ -1,9 +1,7 @@
 
 .navbar { margin-bottom:0px; }
-.container {
-    width: 90%;
-}
-.navbar-inverse {background-color: #FFFFFF;border-color: #FFFFFF;}
+.container {width: 90%; }
+.navbar-inverse {border-color: #FFFFFF;}
 
-
-.main_visual {background-color: #000000;}
+/*** main visual ***/
+.main_visual {background-color: #000000;min-height:650px;}

@@ -8,7 +8,9 @@
 <!--// 네비게이션바  -->
 <!-- 본문비주얼  -->
 	<div class="main_visual">
-	sdfsdf
+	   <div class="visual item" ><img src="{=image('/visual/mainvisual_01.jpg')}"></div>
+	   <div class="visual item" ><img src="{=image('/visual/mainvisual_02.jpg')}"></div>
+	   <div class="visual item" ><img src="{=image('/visual/mainvisual_03.jpg')}"></div>
 	</div>
 <!--// 본문비주얼  -->
 <!--// 본문레이아웃  -->
