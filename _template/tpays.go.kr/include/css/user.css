@@ -1,3 +1,65 @@
+/*
+* Nanum Gothic (Korean) http://www.google.com/webfonts/earlyaccess
+*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
+
+html{overflow:auto;}
+body{background-color:#fff;}
+
+/*
+ * Nanum Barun Gothic (Korean) http://hangeul.naver.com
+ */
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 200;
+  src: url(fonts/NanumBarunGothicUltraLight.eot);
+  src: local('Nanum Barun Gothic UltraLight'),
+       local('NanumBarunGothicUltraLight'),
+       url(fonts/NanumBarunGothicUltraLight.eot?#iefix) format('embedded-opentype'),
+       url(fonts/NanumBarunGothicUltraLight.woff2) format('woff2'),
+       url(fonts/NanumBarunGothicUltraLight.woff) format('woff'),
+       url(fonts/NanumBarunGothicUltraLight.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 300;
+  src: url(fonts/NanumBarunGothicLight.eot);
+  src: local('Nanum Barun Gothic Light'),
+       local('NanumBarunGothicLight'),
+       url(fonts/NanumBarunGothicLight.eot?#iefix) format('embedded-opentype'),
+       url(fonts/NanumBarunGothicLight.woff2) format('woff2'),
+       url(fonts/NanumBarunGothicLight.woff) format('woff'),
+       url(fonts/NanumBarunGothicLight.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/NanumBarunGothic.eot);
+  src: local('Nanum Barun Gothic'),
+       local('NanumBarunGothic'),
+       url(fonts/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+       url(fonts/NanumBarunGothic.woff2) format('woff2'),
+       url(fonts/NanumBarunGothic.woff) format('woff'),
+       url(fonts/NanumBarunGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/NanumBarunGothicBold.eot);
+  src: local('Nanum Barun Gothic Bold'),
+       local('NanumBarunGothicBold'),
+       url(fonts/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+       url(fonts/NanumBarunGothicBold.woff2) format('woff2'),
+       url(fonts/NanumBarunGothicBold.woff) format('woff'),
+       url(fonts/NanumBarunGothicBold.ttf) format('truetype');
+}
 
 .navbar { margin-bottom:0px; background:url('../../include/img/header_border.png') repeat-x 0 bottom}
 .navbar-inverse {border-color: #FFFFFF;opacity: 1;background-color:rgba(0, 0, 0, 0);border:0px;}
@@ -5,9 +67,9 @@
 
 .container .logo {padding-top:25px;padding-bottom:25px;float: left;width:auto;}
 .container .mobile_menu {float:right;padding-top:25px;padding-bottom:25px;}
-.container .memu {list-style:none;position: absolute;left:50%;line-height:40px;margin-bottom:20px;margin-top:20px;margin-left:-370px;}
+.container .memu {list-style:none;position: absolute;left:50%;line-height:40px;margin-bottom:20px;margin-top:20px;margin-left:-370px;font-family: 'NanumBarunGothic'}
 .container .memu li {min-width:80px;text-align:center;display:inline-block;}
-.container .memu li a { font-size:24px;color:#FFFFFF;font-weight:400;text-decoration: none;padding-left:10px;padding-right:10px; }
+.container .memu li a { font-size:18px;color:#FFFFFF;font-weight:400;text-decoration: none;padding-left:10px;padding-right:10px; }
 .navbar:hover { background-color:#FFFFFF; }
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
