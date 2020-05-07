@@ -77,7 +77,7 @@ body{background-color:#fff;}
 .container .memu li .submenu li a { font-size:14px;color:#444;  }
 .container .memu li .submenu li a:hover { color:#bb005e; }
 
-.navbar:hover { background-color:#FFFFFF; }
+/*.navbar:hover { background-color:#FFFFFF; }*/
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
 .navbar:hover .container .memu li a { color:#444;}
