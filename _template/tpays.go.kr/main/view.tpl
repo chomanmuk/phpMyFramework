@@ -5,7 +5,7 @@
 	        	<!-- 로고 -->
 	        	<div class="logo" ><a href="#"><img src="{=image('/logo/logo.png')}" ></a></div>
 	        	<!--// 로고 -->
-				<ul class="memu" >
+				<ul class="memu" id="topmenu" >
 					<li><a href="#" >회사소개</a>
 						<div class="submenu">
 							<ul>
@@ -42,7 +42,11 @@
 	        	<div class="mobile_menu" ><a href="#"><img src="{=image('/btn_allmenu.png')}" ></a></div>
 	        	<!--// 모바일메뉴 -->
 	      </div>
-
+			<script type="text/javascript">
+		    $(document).ready(function(){
+		    	$('#topmenu > li').on("mousein", function(){ $(this).find(".submenu").slideDown(); })
+		    });
+		    </script>
 	</nav>
 <!--// 네비게이션바  -->
 <!-- 본문비주얼  -->
