@@ -9,11 +9,11 @@
 
 .navbar:hover { background-color:#FFFFFF; }
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
-.navbar:hover .container .mobile_menu { content: url(../../include/img/btn_allmenu_on.png); }
+.navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
 
 @media (max-width: 768px) {
- 	.navbar .logo img { content: url(../../include/img/logo/logo_m.png); }
-	.navbar .container .mobile_menu { content: url(../../include/img/btn_allmenu_m.png); }
+ 	.navbar .logo img { content: url(../../include/img/logo/logo_m.png);width:463px; }
+	.navbar .container .mobile_menu img { content: url(../../include/img/btn_allmenu_m.png); }
 }
 
 /*** main visual ***/
