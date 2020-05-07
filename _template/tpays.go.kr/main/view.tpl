@@ -44,6 +44,7 @@
 	      </div>
 			<script type="text/javascript">
 		    $(document).ready(function(){
+		     $('.navbar').animate({'background-color':'#FFFFFF'}, 100)
 		    	$('.navbar').mouseover(function(){ $(this).animate({'background-color':'#FFFFFF'}, 100) })
 		    });
 		    </script>
