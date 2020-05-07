@@ -45,9 +45,8 @@
 			<script type="text/javascript">
 		    $(document).ready(function(){
 
-		    	$('.navbar').hover(function(){
-		    	alert('sdf');
-		    		$(this).animate({'background-color':'#FFFFFF'}, 300);
+		    	$('.navbar').mouseover(function(){
+		    		$(this).stop().animate({background-color:'#FFFFFF'}, 300);
 		    	})
 
 		    });
