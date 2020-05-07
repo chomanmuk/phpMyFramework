@@ -42,11 +42,7 @@
 	        	<div class="mobile_menu" ><a href="#"><img src="{=image('/btn_allmenu.png')}" ></a></div>
 	        	<!--// 모바일메뉴 -->
 	      </div>
-			<script type="text/javascript">
-		    $(document).ready(function(){
-		    	$('#topmenu > li').mouseover(function(){ $(this).find(".submenu").fadeIn(); }).mouseout(function(){ $(this).find(".submenu").fadeOut(); })
-		    });
-		    </script>
+
 	</nav>
 <!--// 네비게이션바  -->
 <!-- 본문비주얼  -->
