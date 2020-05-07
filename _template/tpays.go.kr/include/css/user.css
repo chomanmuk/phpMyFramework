@@ -2,9 +2,9 @@
 .navbar { margin-bottom:0px; }
 .navbar-inverse {border-color: #FFFFFF;opacity: 1;background-color:rgba(0, 0, 0, 0);}
 .container {width: 90%;height:auto; }
-.container .logo {padding-top:15px;padding-buttom:15px;}
-
-
+.container .logo {padding-top:20px;padding-b0ttom:20px;}
+.navbar:hover { background-color:#FFFFFF; }
+.navbar:hover .logo img { content: url(/_template/tpays.go.kr/include/img/logo/logo_on.png); }
 /*** main visual ***/
 .main_visual {background-color: #000000;min-height:650px;width:100%;}
 .main_visual .item { position: absolute;z-index:9;width:100%;}
