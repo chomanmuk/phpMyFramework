@@ -11,9 +11,9 @@
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
 .navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
 
-@media (max-width: 768px) {
- 	.navbar .logo img { content: url(../../include/img/logo/logo_m.png);width:463px; }
-	.navbar .container .mobile_menu img { content: url(../../include/img/btn_allmenu_m.png); }
+@media (max-width: 630px) {
+ 	.navbar .logo img { content: url(../../include/img/logo/logo_m.png);width:160px; }
+	.navbar .container .mobile_menu img { content: url(../../include/img/btn_allmenu_m.png);width:30px;}
 }
 
 /*** main visual ***/
