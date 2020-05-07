@@ -4,8 +4,9 @@
 .container {width: 96%;height:auto; }
 
 .container .logo {padding-top:25px;padding-bottom:25px;float: left;width:auto;}
-
 .container .mobile_menu {float:right;padding-top:25px;padding-bottom:25px;}
+.container .memu {list-type:none;position: absolute;left:50%;}
+.container .memu li {min-width:80px;text-align:center;display:line-block;}
 
 .navbar:hover { background-color:#FFFFFF; }
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
