@@ -2,7 +2,7 @@
 <!-- 네비게이션바  -->
 	 <nav class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container">
-	        wer
+	        	<div class="logo" ><img src="{=image('/logo/logo.png')}" ></div>
 	      </div>
 	</nav>
 <!--// 네비게이션바  -->

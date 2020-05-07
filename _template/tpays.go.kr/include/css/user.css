@@ -1,7 +1,7 @@
 
 .navbar { margin-bottom:0px; }
-.container {width: 90%; }
-.navbar-inverse {border-color: #FFFFFF;opacity: 0.5;}
+.container {width: 90%;height:auto; }
+.navbar-inverse {border-color: #FFFFFF;opacity: 0.0;}
 
 /*** main visual ***/
 .main_visual {background-color: #000000;min-height:650px;width:100%;}
