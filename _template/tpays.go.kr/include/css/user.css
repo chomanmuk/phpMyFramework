@@ -4,5 +4,6 @@
 .navbar-inverse {border-color: #FFFFFF;opacity: 0.5;}
 
 /*** main visual ***/
-.main_visual {background-color: #000000;min-height:650px;}
-.main_visual .item { position: absolute;z-index:9}
+.main_visual {background-color: #000000;min-height:650px;width:100%;}
+.main_visual .item { position: absolute;z-index:9;width:100%;}
+.main_visual .item img {width:100%;}
