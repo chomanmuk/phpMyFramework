@@ -5,3 +5,4 @@
 
 /*** main visual ***/
 .main_visual {background-color: #000000;min-height:650px;}
+.main_visual .item { position: absolute;z-index:9}
