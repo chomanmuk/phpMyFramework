@@ -46,6 +46,7 @@
 		    $(document).ready(function(){
 
 		    	$('.navbar').hover(function(){
+		    	alert('sdf');
 		    		$(this).animate({'background-color':'#FFFFFF'}, 300);
 		    	})
 
