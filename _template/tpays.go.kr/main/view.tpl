@@ -44,7 +44,7 @@
 	      </div>
 			<script type="text/javascript">
 		    $(document).ready(function(){
-$('.navbar').animate({backgroundColor:'#FFFFFF'}, 300);
+$('.navbar').css('background-color', 'red').slideDown(400);
 		    	$('.navbar').mouseover(function(){
 		    		$(this).animate({backgroundColor:'#FFFFFF'}, 300);
 		    	})
