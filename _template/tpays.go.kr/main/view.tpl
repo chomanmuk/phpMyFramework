@@ -45,8 +45,8 @@
 	</nav>
 	<script type="text/javascript">
 			    $(document).ready(function(){
-			    	$('.navbar-inverse').mouseover(function(){
-			    		$(this).stop().animate({backgroundColor:"rgba(255, 255, 255, 0)"}, 1000);
+			    	$('.navbar').mouseover(function(){
+			    		$(this).animate({backgroundColor:"rgba(255, 255, 255, 0)"}, 1000);
 			    	})
 
 			    });
