@@ -45,8 +45,10 @@
 	</div>
 	<script type="text/javascript">
 			    $(document).ready(function(){
-			    	$('.navbar').mouseover(function(){
-			    		$(this).animate({backgroundColor: "#aa0000"}, 1000);
+			    	$('.navbar').hover(function(){
+			    		$(this).stop().animate({backgroundColor: "#FFFFFF"}, 500);
+			    	},function(){
+			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
 
 			    });
