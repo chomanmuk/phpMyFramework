@@ -42,6 +42,7 @@
 	        	<div class="mobile_menu" ><a href="#"><img src="{=image('/btn_allmenu.png')}" ></a></div>
 	        	<!--// 모바일메뉴 -->
 	      </div>
+	      <div class="submenuBg" style="height: 0px; opacity: 0;"></div>
 	</div>
 	<script type="text/javascript">
 			    $(document).ready(function(){
@@ -51,9 +52,9 @@
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
 					$('#topmenu > li').hover(function(){
-						$(this).find('.submenu').stop().fadeIn(300);
+						$('.submenuBg').stop().animate({height: "500px", opacity : 1}, 500);
 					 },function(){
-					 	$(this).find('.submenu').stop().fadeOut(300);
+					 	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 500);
 					 })
 			    });
 	</script>
