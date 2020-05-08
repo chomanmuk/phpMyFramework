@@ -46,7 +46,7 @@
 		    $(document).ready(function(){
 
 		    	$('.navbar').mouseover(function(){
-		    		$(this).stop().animate({background:'#FFFFFF'}, 300);
+		    		$(this).stop().animate({backgroundColor:'#FFFFFF'}, 300);
 		    	})
 
 		    });
