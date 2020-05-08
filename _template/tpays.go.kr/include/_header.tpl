@@ -17,7 +17,8 @@
     	<!--{=include_js('https://oss.maxcdn.com/respond/1.4.2/respond.min.js','url') }-->
     <![endif]-->
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-    <!--{=include_js('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js','url') }-->
+    <!--{=include_js('https://code.jquery.com/jquery-1.12.4.js','url') }-->
+    <!--{=include_js('https://code.jquery.com/ui/1.12.1/jquery-ui.js','url') }-->
 	<!--{=include_js('bootstrap.min.js', 'system') }-->
 	<!--{=include_js('docs.min.js') }-->
 	<!--{=include_js('ie10-viewport-bug-workaround.js') }-->
