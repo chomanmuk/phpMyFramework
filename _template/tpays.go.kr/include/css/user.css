@@ -76,7 +76,7 @@ body{background-color:#fff;}
 .container .memu li .submenu li a { font-size:14px;color:#444;  }
 .container .memu li .submenu li a:hover { color:#bb005e; }
 
-.navbar .submenuBg {position: absolute;top: 81px; left: 0; width: 100%; background: #fff url(/images/common/header_border.png) repeat-x 0 top; }
+.navbar .submenuBg {position: absolute;top: 81px; left: 0; width: 100%; background: #fff url(/images/common/header_border.png) repeat-x 0 top;index:1 }
 
 /*.navbar:hover { background-color:#FFFFFF; }*/
 .navbar:hover .logo img { content: url(../../include/img/logo/logo_on.png); }
