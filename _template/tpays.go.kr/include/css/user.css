@@ -61,7 +61,7 @@ body{background-color:#fff;}
        url(fonts/NanumBarunGothicBold.ttf) format('truetype');
 }
 
-.navbar { margin-bottom:0px; } /* background:url('../../include/img/header_border.png') repeat-x 0 bottom */
+.navbar { margin-bottom:0px; background:url('../../include/img/header_border.png') repeat-x 0 bottom} /*  */
 .navbar-inverse {border-color: #FFFFFF;border: 0px;}
 .container {width: 96%;height:auto; }
 
