@@ -46,7 +46,7 @@
 	<script type="text/javascript">
 			    $(document).ready(function(){
 			    	$('.navbar').mouseover(function(){
-			    		$(this).animate({backgroundColor:"rgba(255, 255, 255, 0)"}, 1000);
+			    		$(this).animate({background:'rgba(255, 255, 255, 1)'}, 1000);
 			    	})
 
 			    });
