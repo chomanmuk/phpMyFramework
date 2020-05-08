@@ -50,7 +50,11 @@
 			    	},function(){
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
-
+					$('#topmenu > li').hover(function(){
+						$(this).find('.submenu').stop().fadeIn(600);
+					 },function(){
+					 	$(this).find('.submenu').stop().fadeOut(600);
+					 })
 			    });
 	</script>
 <!--// 네비게이션바  -->
