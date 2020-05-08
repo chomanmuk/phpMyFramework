@@ -52,7 +52,7 @@
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
 					$('#topmenu > li').hover(function(){
-						$('.submenuBg').stop().animate({height: "500px", opacity : 1}, 500, function(){ $('#topmenu > li > .submenu').animate({ opacity : 1}, 100); });
+						$('.submenuBg').stop().animate({height: "200px", opacity : 1}, 500, function(){ $('#topmenu > li > .submenu').animate({ opacity : 1}, 100); });
 					 },function(){
 					    $('#topmenu > li > .submenu').animate({ opacity : 0 }, 100, function(){
 					    	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 500);
