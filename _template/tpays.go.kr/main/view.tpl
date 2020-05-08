@@ -51,9 +51,9 @@
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
 					$('#topmenu > li').hover(function(){
-						$(this).find('.submenu').stop().fadeIn(600);
+						$(this).find('.submenu').stop().fadeIn(300);
 					 },function(){
-					 	$(this).find('.submenu').stop().fadeOut(600);
+					 	$(this).find('.submenu').stop().fadeOut(300);
 					 })
 			    });
 	</script>
