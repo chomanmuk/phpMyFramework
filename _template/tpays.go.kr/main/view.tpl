@@ -1,6 +1,6 @@
 <!--{# header }-->
 <!-- 네비게이션바  -->
-	 <nav class="navbar navbar-inverse navbar-fixed-top">
+	 <div class="navbar navbar-fixed-top">
 	      <div class="container">
 	        	<!-- 로고 -->
 	        	<div class="logo" ><a href="#"><img src="{=image('/logo/logo.png')}" ></a></div>
@@ -42,7 +42,7 @@
 	        	<div class="mobile_menu" ><a href="#"><img src="{=image('/btn_allmenu.png')}" ></a></div>
 	        	<!--// 모바일메뉴 -->
 	      </div>
-	</nav>
+	</div>
 	<script type="text/javascript">
 			    $(document).ready(function(){
 			    	$('.navbar').mouseover(function(){
