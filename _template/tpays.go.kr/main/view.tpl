@@ -42,15 +42,15 @@
 	        	<div class="mobile_menu" ><a href="#"><img src="{=image('/btn_allmenu.png')}" ></a></div>
 	        	<!--// 모바일메뉴 -->
 	      </div>
-			<script type="text/javascript">
-		    $(document).ready(function(){
-		    	$('.navbar').mouseover(function(){
-		    		$(this).animate({'backgroundColor':'#FFFFFF'}, 300);
-		    	})
-
-		    });
-		    </script>
 	</nav>
+	<script type="text/javascript">
+			    $(document).ready(function(){
+			    	$('.navbar').mouseover(function(){
+			    		$(this).stop().animate({opacity:0}, 1000);
+			    	})
+
+			    });
+	</script>
 <!--// 네비게이션바  -->
 <!-- 본문비주얼  -->
 	<div class="main_visual">
