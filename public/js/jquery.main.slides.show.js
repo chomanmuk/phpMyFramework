@@ -85,7 +85,7 @@
 				$(this).css({opacity: 0, zIndex:1});
 				self.settings.totalSlides ++;
 			});
-			$(".box_skitter_data .div[rel='0']", self.slide).css({'opacity':1,'z-index':9});
+			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9});
 		}
 
 	});
