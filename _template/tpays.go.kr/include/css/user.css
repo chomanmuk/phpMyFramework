@@ -89,6 +89,6 @@ body{background-color:#fff;}
 }
 
 /*** main visual ***/
-.main_visual {background-color: #000000;height:800px;width:100%;overflow:hidden;position: relative;}
+.main_visual {background-color: #000000;height:900px;width:100%;overflow:hidden;position: relative;}
 .main_visual .item { position: absolute;z-index:9;width:100%;}
 .main_visual .item img {width:100%;}
