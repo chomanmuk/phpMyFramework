@@ -94,13 +94,14 @@
 		},
 		fadeAnimat : function(){
 			var self = this;
-			$(".box_skitter_data div[rel='" + (self.settings.currentSlide-1) + "']", self.slide).animate({opacity:0,zIndex:1}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).animate({opacity:0,zIndex:1}, self.settings.animation);
 			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).animate({opacity:1,zIndex:9}, self.settings.animation);
 
 		},
 		animate : function(){
 			var self = this;
-			if(self.settings.currentSlide > (self.settings.totalSlides-1)){ self.settings.currentSlide = 0;	}else{ self.settings.currentSlide ++; }
+			self.settings.oldSlide=self.settings.currentSlide;
+			if(self.settings.currentSlide > (self.settings.totalSlides-1)){ self.settings.currentSlide = 0; 	}else{ self.settings.currentSlide ++; }
 
 			switch (self.settings.animationType)
 			{
