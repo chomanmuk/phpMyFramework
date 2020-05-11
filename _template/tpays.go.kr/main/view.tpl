@@ -52,9 +52,9 @@
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
 					$('#topmenu').hover(function(){
-						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 500, function(){$('.container .memu li .submenu').shop().animate({ opacity : 1, height:'230px'}, 100); });
+						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 500, function(){$('.container .submenu').stop().animate({ opacity : 1, height:'230px'}, 100); });
 					 },function(){
-					    $('.submenu').shop().animate({ opacity : 0, height:'0px' }, 100, function(){
+					    $('.submenu').stop().animate({ opacity : 0, height:'0px' }, 100, function(){
 					    	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 500);
 					    });
 					 })
