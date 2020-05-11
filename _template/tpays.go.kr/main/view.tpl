@@ -52,12 +52,14 @@
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
 					$('#topmenu').hover(function(){
-						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 200, function(){$('.container .submenu').stop().animate({ opacity : 1, height:'230px'}, 200); });
+						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 300, function(){$('.container .submenu').stop().animate({ opacity : 1, height:'230px'}, 300); });
+					 },function(){
+					    $('.submenu').stop().animate({ opacity : 0, height:'0px' }, 300, function(){
+					    	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 300);
+					    });
 					 })
 					$(".submenuBg").mouseout(function(){
-						 $('.submenu').stop().animate({ opacity : 0, height:'0px' }, 200, function(){
-					    	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 200);
-					    });
+
 					});
 			    });
 	</script>
