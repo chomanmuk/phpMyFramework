@@ -87,6 +87,7 @@
 				$(this).css({opacity: 0, zIndex:1});
 				self.settings.totalSlides ++;
 			});
+			$(self.slide).css({width:$(window).width()+'px'});
 			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9});
 		},
 		Event : function(){
