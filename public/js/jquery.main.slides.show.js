@@ -82,9 +82,10 @@
 			var self = this;
 			$(".box_skitter_data", self.slide).find("div").each(function() {
 				$(this).attr('rel', self.settings.totalSlides);
-				$(this).css({opacity: 0, zIndex:10});
+				$(this).css({opacity: 0, zIndex:1});
 				self.settings.totalSlides ++;
 			});
+			$(".box_skitter_data[rel='0']", self.slide).css({'opacity':1,'z-index':9});
 		}
 
 	});
