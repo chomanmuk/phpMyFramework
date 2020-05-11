@@ -99,7 +99,7 @@
 		},
 		resize : function(){
 			var self = this;
-			$(self.slide).css({width:$(width).width() +'px',height:$(".box_skitter_data div img",self.slide).height() + 'px'})
+			$(self.slide).css({width:$(window).width() +'px',height:$(".box_skitter_data div img",self.slide).height() + 'px'})
 		},
 		fadeAnimat : function(){
 			var self = this;
