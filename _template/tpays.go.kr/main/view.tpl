@@ -78,7 +78,7 @@
 			options["pauseTime"] = 4000;			//대기시간
 			options["controllbar"] = true;			//좌우컨트롤 보이기
 			options["heightcut"] = 30;		//세로분활수  분활수가 많을수록 낮은사양의 피씨에서는 느릴수 있습니다.
-
+			options["animationType"] = "fade";
 			$('.box_skitter_large').slideshow(options);
 
 		})(jQuery);

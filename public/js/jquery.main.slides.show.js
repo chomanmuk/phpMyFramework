@@ -22,6 +22,7 @@
 			opacity		: 				0.8,
 			pauseTime	: 				4500,
 			animation	: 				1000,
+			animationType: 				'fade',
 			timer		: 				0,
 			imgheight	:				0,
 			screenWidth :				$(window).width(),
@@ -50,7 +51,6 @@
 			maskcolor	:				"#FFFFFF",
 			tmpboxwidth	:				42,
 			tmpboxheight:				42,
-			animation_type	:				"",
 			viewbult	:			true,
 			viewlist :				false,
 			cntview	:				false,
@@ -77,6 +77,8 @@
 		{
 			var self = this;
 			this.load();
+			this.Event();
+			this.settings.timer = setInterval(function(){ self.animate(); }, this.settings.pauseTime);
 		},
 		load: function(options){
 			var self = this;
@@ -86,8 +88,29 @@
 				self.settings.totalSlides ++;
 			});
 			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9});
-		}
+		},
+		Event : function(){
 
+		},
+		fadeAnimat : function(){
+			var self = this;
+			$(".box_skitter_data div[rel='" + (self.settings.currentSlide-1) + "']", self.slide).animate({opacity:0,zIndex:1}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).animate({opacity:1,zIndex:9}, self.settings.animation);
+
+		},
+		animate : function(){
+			var self = this;
+			if(self.settings.currentSlide >= self.settings.totalSlides){ self.settings.currentSlide = 0;	}else{ self.settings.currentSlide ++; }
+
+			switch (self.settings.animationType)
+			{
+				case "fade":
+					this.fadeAnimat();
+					break;
+				default :
+					break;
+			}
+		}
 	});
 
 })(jQuery);
