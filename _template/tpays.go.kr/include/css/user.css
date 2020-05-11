@@ -83,6 +83,10 @@ body{background-color:#fff;}
 .navbar:hover .container .mobile_menu img { content: url(../../include/img/btn_allmenu_on.png); }
 .navbar:hover .container .memu li a { color:#444;}
 @media (max-width: 630px) {
+	.navbar { min-height:30px; }
+	.container .logo { padding-top:10px;padding-bottom:10px; }
+	.container .memu {line-height:20px;margin-top:10px;margin-bottom:10px;}
+	.container .mobile_menu { padding-top:10px;padding-bottom:10px; }
  	.navbar .logo img { content: url(../../include/img/logo/logo_m.png);width:160px; }
 	.navbar .container .mobile_menu img { content: url(../../include/img/btn_allmenu_m.png);width:30px;}
 	.container .memu {display:none;}
