@@ -51,10 +51,10 @@
 			    	},function(){
 			    		$(this).stop().animate({backgroundColor: "rgba(0,0,0,0)"}, 500);
 			    	})
-					$('#topmenu > li').hover(function(){
-						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 500, function(){ $('#topmenu > li > .submenu').animate({ opacity : 1, height:'230px'}, 100); });
+					$('#topmenu').hover(function(){
+						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 500, function(){ $('#topmenu .submenu').animate({ opacity : 1, height:'230px'}, 100); });
 					 },function(){
-					    $('#topmenu > li > .submenu').animate({ opacity : 0, height:'0px' }, 100, function(){
+					    $('#topmenu .submenu').animate({ opacity : 0, height:'0px' }, 100, function(){
 					    	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 500);
 					    });
 					 })
