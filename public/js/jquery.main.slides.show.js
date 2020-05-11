@@ -92,7 +92,7 @@
 			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9}).attr('on', 'Y');
 		},
 		Event : function(){
-
+			var self = this;
 			$(window).resize(function(){
 				self.resize();
 			});
