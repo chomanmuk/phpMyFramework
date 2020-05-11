@@ -77,6 +77,7 @@
 		{
 			var self = this;
 			this.load();
+			this.resize();
 			this.Event();
 			this.settings.timer = setInterval(function(){ self.animate(); }, this.settings.pauseTime);
 		},
@@ -92,6 +93,13 @@
 		},
 		Event : function(){
 
+			$(window).resize(function(){
+				self.Resize();
+			});
+		},
+		resize : function(){
+			var self = this;
+			$(self.slide).css({width:$(width).width() +'px',height:$(".box_skitter_data div img",self.slide).height() + 'px'})
 		},
 		fadeAnimat : function(){
 			var self = this;
