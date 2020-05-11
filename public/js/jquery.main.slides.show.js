@@ -101,7 +101,8 @@
 		animate : function(){
 			var self = this;
 			self.settings.oldSlide=self.settings.currentSlide;
-			if(self.settings.currentSlide > (self.settings.totalSlides-1)){ self.settings.currentSlide = 0; 	}else{ self.settings.currentSlide ++; }
+
+			if(self.settings.currentSlide >= (self.settings.totalSlides-1)){ self.settings.currentSlide = 0; 	}else{ self.settings.currentSlide ++; }
 
 			switch (self.settings.animationType)
 			{
