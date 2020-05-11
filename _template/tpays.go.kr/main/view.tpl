@@ -53,11 +53,12 @@
 			    	})
 					$('#topmenu').hover(function(){
 						$('.submenuBg').stop().animate({height: "230px", opacity : 1}, 500, function(){$('.container .submenu').stop().animate({ opacity : 1, height:'230px'}, 500); });
-					 },function(){
-					    $('.submenu').stop().animate({ opacity : 0, height:'0px' }, 500, function(){
+					 })
+					$(".submenuBg").mouseout(function(){
+						 $('.submenu').stop().animate({ opacity : 0, height:'0px' }, 500, function(){
 					    	$('.submenuBg').stop().animate({height: "0px", opacity : 0}, 500);
 					    });
-					 })
+					});
 			    });
 	</script>
 <!--// 네비게이션바  -->
