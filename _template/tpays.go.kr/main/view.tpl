@@ -62,11 +62,28 @@
 	</script>
 <!--// 네비게이션바  -->
 <!-- 본문비주얼  -->
-	<div class="main_visual">
-	   <div class="visual item" ><img src="{=image('/visual/mainvisual_01.jpg')}"></div>
-	   <div class="visual item" ><img src="{=image('/visual/mainvisual_02.jpg')}"></div>
-	   <div class="visual item" ><img src="{=image('/visual/mainvisual_03.jpg')}"></div>
+	<div class="main_visual box_skitter_large">
+	   <div class="box_skitter_data" >
+		   <div class="visual item" ><img src="{=image('/visual/mainvisual_01.jpg')}"></div>
+		   <div class="visual item" ><img src="{=image('/visual/mainvisual_02.jpg')}"></div>
+		   <div class="visual item" ><img src="{=image('/visual/mainvisual_03.jpg')}"></div>
+	   </div>
 	</div>
+	<!--{=include_js('jquery.main.slides.show.js', 'system') }-->
+	<script type="text/javascript" >
+		(function($) {
+			//100%화면이란 가정을 한다
+			var options = {};
+			options["animation"] = 1000;			//애니타임
+			options["pauseTime"] = 4000;			//대기시간
+			options["controllbar"] = true;			//좌우컨트롤 보이기
+			options["heightcut"] = 30;		//세로분활수  분활수가 많을수록 낮은사양의 피씨에서는 느릴수 있습니다.
+
+			$('.box_skitter_large').slideshow(options);
+
+		})(jQuery);
+	</script>
+
 <!--// 본문비주얼  -->
 <!--// 본문레이아웃  -->
  <!--{# footer }-->
