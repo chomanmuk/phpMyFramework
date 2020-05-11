@@ -89,7 +89,7 @@
 				self.settings.totalSlides ++;
 			});
 			$(self.slide).css({width:$(window).width()+'px'});
-			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9});
+			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9}).attr('on', 'Y');
 		},
 		Event : function(){
 
@@ -99,19 +99,19 @@
 		},
 		resize : function(){
 			var self = this;
-			$(self.slide).css({width:$(window).width() +'px',height:$(".box_skitter_data div img",self.slide).height() + 'px'})
+			$(self.slide).css({width:$(window).width() +'px',height:$(".box_skitter_data div[on='Y'] img",self.slide).height() + 'px'})
 		},
 		fadeAnimat : function(){
 			var self = this;
-			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).animate({opacity:0,zIndex:1}, self.settings.animation);
-			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).animate({opacity:1,zIndex:9}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).stop().animate({opacity:0,zIndex:1}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).stop().animate({opacity:1,zIndex:9}, self.settings.animation);
 
 		},
 		fadeInAnimat : function(){
 			var self = this;
 			self.resize();
-			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).stop().animate({opacity:0,zIndex:1, left:'-'+($(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()*0.5)/2+'px',width:140 +'%'}, self.settings.animation);
-			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).css({left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',width:100+'%'}).stop().animate({opacity:0,zIndex:1, left:'-'+($(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()*0.5)/2+'px',width:140 +'%'}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
 		animate : function(){
