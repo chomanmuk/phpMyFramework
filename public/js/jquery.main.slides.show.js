@@ -98,6 +98,12 @@
 			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).animate({opacity:1,zIndex:9}, self.settings.animation);
 
 		},
+		fadeInAnimat : function(){
+			var self = this;
+			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).animate({opacity:0,zIndex:1, width:120 +'%'}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).animate({opacity:1,zIndex:9, width:100 +'%'}, self.settings.animation);
+
+		},
 		animate : function(){
 			var self = this;
 			self.settings.oldSlide=self.settings.currentSlide;
@@ -108,6 +114,9 @@
 			{
 				case "fade":
 					this.fadeAnimat();
+					break;
+				case "fadeIn":
+					this.fadeInAnimat();
 					break;
 				default :
 					break;
