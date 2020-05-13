@@ -144,9 +144,9 @@
 		},
 		makeLayer : function(){
 			var self = this;
-			var layerwidth = $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).width()/widthcut;
-			for(var i=0;i<widthcut;i++){
-				$(".box_skitter_data", self.slide).append("<div style='position:absolute;width:" + layerwidth + "px;left:" + (i*widthcut) + "px'></div>")
+			var layerwidth = $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).width()/self.settings.widthcut;
+			for(var i=0;i<self.settings.widthcut;i++){
+				$(".box_skitter_data", self.slide).append("<div style='position:absolute;width:" + layerwidth + "px;left:" + (i*self.settings.widthcut) + "px'></div>")
 			}
 		},
 		blindAnimat : function(){
