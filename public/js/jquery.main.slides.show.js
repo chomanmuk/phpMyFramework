@@ -196,11 +196,11 @@
 		},
 		closeTwistLayer : function(){
 			var self = this;
-			var step = (self.settings.widthcut * self.settings.heightcut) -1;
+			var step = 0;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({transform:'rotateY(90deg)',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
-					step--;
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({transform:'rotateY(180deg)',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
+					step++;
 				}
 			}
 		},
