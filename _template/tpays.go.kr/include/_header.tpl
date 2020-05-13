@@ -20,7 +20,7 @@
     <!--{=include_js('https://code.jquery.com/jquery-1.12.4.js','url') }-->
     <!--{=include_js('https://code.jquery.com/ui/1.12.1/jquery-ui.js','url') }-->
 	<!--{=include_js('bootstrap.min.js', 'system') }-->
-	<!--{=include_js('jquery.transit.min.js', 'system') }-->
+	<!--{=include_js('plugin/jquery.transit.min.js', 'system') }-->
 
 
   </head>
