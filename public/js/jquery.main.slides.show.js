@@ -204,6 +204,16 @@
 				}
 			}
 		},
+		closeTwistReverseLayer : function(){
+			var self = this;
+			var step = (self.settings.widthcut * self.settings.heightcut) -1;
+			for(var i=0;i<self.settings.widthcut;i++){
+				for(var j=0;j<self.settings.heightcut;j++){
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).transition({rotate:'45deg',opacity:0}).animate({transform:'rotate(180deg)'}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
+					step--;
+				}
+			}
+		},
 		blindAnimat : function(){
 			var self = this;
 			self.makeLayer();
@@ -230,6 +240,9 @@
 					self.closeMosaicReverseLayer();
 					break;
 				case "twist":
+					self.closeTwistLayer();
+					break;
+				case "twistReverse":
 					self.closeTwistLayer();
 					break;
 				default :
