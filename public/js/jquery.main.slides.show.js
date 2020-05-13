@@ -101,7 +101,7 @@
 		},
 		resize : function(){
 			var self = this;
-			if($(".box_skitter_data div[on='Y'] img",self.slide).height()) < self.settings.imgheight){
+			if($(".box_skitter_data div[on='Y'] img",self.slide).height() < self.settings.imgheight){
 				$(self.slide).css({width:$(window).width() +'px',height:$(".box_skitter_data div[on='Y'] img",self.slide).height() + 'px'})
 			}else{
 				$(self.slide).css({width:$(window).width() +'px',height:self.settings.imgheight + 'px'})
