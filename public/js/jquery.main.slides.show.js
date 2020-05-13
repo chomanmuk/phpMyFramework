@@ -194,6 +194,26 @@
 				}
 			}
 		},
+		closeRotate3DLayer : function(){
+			var self = this;
+			var step = 0;
+			for(var i=0;i<self.settings.widthcut;i++){
+				for(var j=0;j<self.settings.heightcut;j++){
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).transition({perspective: '100px',rotate3d: '1,1,0,180deg'}).animate({width:0+'px',height:0+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
+					step++;
+				}
+			}
+		},
+		closeRotate3DReverseLayer : function(){
+			var self = this;
+			var step = (self.settings.widthcut * self.settings.heightcut) -1;
+			for(var i=0;i<self.settings.widthcut;i++){
+				for(var j=0;j<self.settings.heightcut;j++){
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).transition({perspective: '100px',rotate3d: '1,1,0,180deg'}).animate({width:0+'px',height:0+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
+					step--;
+				}
+			}
+		},
 		closeTwistLayer : function(){
 			var self = this;
 			var step = 0;
@@ -257,6 +277,12 @@
 					self.closeMosaicLayer();
 					break;
 				case "mosaicReverse":
+					self.closeMosaicReverseLayer();
+					break;
+				case "rotate3D":
+					self.closeRotate3DLayer();
+					break;
+				case "rotate3DReverse":
 					self.closeMosaicReverseLayer();
 					break;
 				case "twist":

@@ -83,7 +83,7 @@
 			options["widthcut"] = 15;		//세로분활수  분활수가 많을수록 낮은사양의 피씨에서는 느릴수 있습니다.
 			options["heightcut"] = 10;
 			options["animationType"] = "blindEvent";
-			options["animationSubType"] = "mosaic";
+			options["animationSubType"] = "rotate3D";
 			$('.box_skitter_large').slideshow(options);
 
 		})(jQuery);
