@@ -146,7 +146,7 @@
 			var self = this;
 			var layerwidth = $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).width()/self.settings.widthcut;
 			for(var i=0;i<self.settings.widthcut;i++){
-				$(".box_skitter_data", self.slide).append("<div style='position:absolute;width:" + layerwidth + "px;left:" + (i*self.settings.widthcut) + "px'></div>")
+				$(".box_skitter_data", self.slide).append("<div style='position:absolute;width:" + layerwidth + "px;left:" + (i*layerwidth) + "px;z-index:10;height:" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).height() + "px'></div>")
 			}
 		},
 		blindAnimat : function(){
