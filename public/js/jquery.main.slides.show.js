@@ -156,7 +156,7 @@
 			var self = this;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".box_skitter_data .block[rel='" + (i+j) + "']", self.slide).stop().delay((i*50)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
+					$(".block[rel='" + (i+j) + "']", self.slide).stop().delay((i*50)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
 				}
 			}
 		},
@@ -171,10 +171,10 @@
 		blindAnimat : function(){
 			var self = this;
 			self.makeLayer();
-			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',zIndex:1, width:100+'%',opacity:0});
+			$(".item[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',zIndex:1, width:100+'%',opacity:0});
 			clearInterval(self.settings.timer);
 			//self.closeLayerAnimat();
-			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
+			$(".item[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
 		closeLayerAnimat : function(){
