@@ -243,7 +243,7 @@
 					self.closeTwistLayer();
 					break;
 				case "twistReverse":
-					self.closeTwistLayer();
+					self.closeTwistReverseLayer();
 					break;
 				default :
 					break;
