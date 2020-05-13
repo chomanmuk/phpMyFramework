@@ -151,6 +151,7 @@
 
 		},
 		closeLayer : function(){
+			var self = this;
 			for(var i=0;i<self.settings.widthcut;i++){
 				$(".box_skitter_data .block[rel='" + i + "']", self.slide).stop().delay((i*100)).animate({opacity:0}, self.settings.animation, function(){ $(".box_skitter_data .block[rel='" + i + "']", self.slide).remove(); })
 			}
