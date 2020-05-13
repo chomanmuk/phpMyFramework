@@ -164,7 +164,7 @@
 			var self = this;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + (i+j) + "']", self.slide).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
+					$(".block[rel='" + (i+j) + "']", self.slide).stop().delay((i*50)).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
 				}
 			}
 		},
