@@ -177,8 +177,8 @@
 			var self = this;
 			self.makeLayer();
 			$(".item[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',zIndex:1, width:100+'%',opacity:0});
-			clearInterval(self.settings.timer);
-			//self.closeLayerAnimat();
+			//clearInterval(self.settings.timer);
+			self.closeLayerAnimat();
 			$(".item[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
