@@ -283,7 +283,7 @@
 					self.closeRotate3DLayer();
 					break;
 				case "rotate3DReverse":
-					self.closeMosaicReverseLayer();
+					self.closeRotate3DReverseLayer();
 					break;
 				case "twist":
 					self.closeTwistLayer();
