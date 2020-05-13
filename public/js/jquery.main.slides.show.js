@@ -145,9 +145,11 @@
 			var self = this;
 			var layerWidth = $(self.slide).width()/self.settings.widthcut;
 			var layerHeight = $(self.slide).height()/self.settings.heightcut;
+			var step = 0;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".box_skitter_data", self.slide).append("<div class='block' rel='" + (i+j) + "' style='position:absolute;width:" + layerWidth + "px;left:" + (i*layerWidth) + "px;top:" + (j * layerHeight) + "px;z-index:9;height:" + layerHeight + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerWidth)+ "px -" + (j * layerHeight) + "px; '></div>");
+					$(".box_skitter_data", self.slide).append("<div class='block' rel='" + step + "' style='position:absolute;width:" + layerWidth + "px;left:" + (i*layerWidth) + "px;top:" + (j * layerHeight) + "px;z-index:9;height:" + layerHeight + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerWidth)+ "px -" + (j * layerHeight) + "px; '></div>");
+					step++;
 				}
 			}
 
@@ -156,15 +158,18 @@
 			var self = this;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + (i+j) + "']", self.slide).stop().delay((i*50)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
+					$(".block[rel='" + step + "']", self.slide).stop().delay((i*50)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
+					step++;
 				}
 			}
 		},
 		closeMosaicLayer : function(){
 			var self = this;
+			var step = 0;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + (i+j) + "']", self.slide).stop().delay((i*50)).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
+					$(".block[rel='" + step + "']", self.slide).stop().delay((i*50)).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
+					step++;
 				}
 			}
 		},
