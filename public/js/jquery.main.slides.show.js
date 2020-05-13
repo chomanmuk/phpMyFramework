@@ -179,7 +179,7 @@
 			var step = 0;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({left:($(".block[rel='" + step + "']", self.slide).css("left").replace(/[^-\d\.]/g, '')+($(".block[rel='" + step + "']", self.slide).width()/2))+'px',width:0+'px',height:0+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({left:($(".block[rel='" + step + "']", self.slide).css("left").replace(/[^-\d\.]/g, '')+($(".block[rel='" + step + "']", self.slide).width()/2))+'px',top:($(".block[rel='" + step + "']", self.slide).css("top").replace(/[^-\d\.]/g, '')+($(".block[rel='" + step + "']", self.slide).height()/2))+'px',width:0+'px',height:0+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
 					step++;
 				}
 			}
