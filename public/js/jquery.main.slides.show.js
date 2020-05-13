@@ -89,6 +89,8 @@
 				self.settings.totalSlides ++;
 			});
 			$(self.slide).css({width:$(window).width()+'px'});
+			self.settings.imgheight = $(self.slide).height();
+
 			$(".box_skitter_data div[rel='0']", self.slide).css({'opacity':1,'z-index':9}).attr('on', 'Y');
 		},
 		Event : function(){
@@ -99,7 +101,12 @@
 		},
 		resize : function(){
 			var self = this;
-			$(self.slide).css({width:$(window).width() +'px',height:$(".box_skitter_data div[on='Y'] img",self.slide).height() + 'px'})
+			if($(".box_skitter_data div[on='Y'] img",self.slide).height()) < self.settings.imgheight){
+				$(self.slide).css({width:$(window).width() +'px',height:$(".box_skitter_data div[on='Y'] img",self.slide).height() + 'px'})
+			}else{
+				$(self.slide).css({width:$(window).width() +'px',height:self.settings.imgheight + 'px'})
+			}
+
 		},
 		fadeAnimat : function(){
 			var self = this;
