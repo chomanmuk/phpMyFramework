@@ -121,11 +121,18 @@
 			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:0,zIndex:1,left:'-'+($(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()*0.5)/2+'px',width:140+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
-		LeftMoveAnimat : function(){
+		leftMoveAnimat : function(){
 			var self = this;
 
 			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px'}).stop().animate({opacity:1,zIndex:1, left:'-'+$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()+'px',width:100 +'%'}, self.settings.animation);
 			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
+
+		},
+		rightMoveAnimat : function(){
+			var self = this;
+
+			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px'}).stop().animate({opacity:1,zIndex:1, left:$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()+'px',width:100 +'%'}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:'-'+$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
 		animate : function(){
@@ -146,7 +153,10 @@
 					this.fadeOutAnimat();
 					break;
 				case "leftMove":
-					this.LeftMoveAnimat();
+					this.leftMoveAnimat();
+					break;
+				case "rightMove":
+					this.rightMoveAnimat();
 					break;
 				default :
 					break;
