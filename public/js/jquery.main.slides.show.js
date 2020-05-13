@@ -148,7 +148,7 @@
 			for(var i=0;i<widthcut;i++){
 				$(".box_skitter_data", self.slide).append("<div style='position:absolute;width:" + layerwidth + "px;left:" + (i*widthcut) + "px'></div>")
 			}
-		}
+		},
 		blindAnimat : function(){
 			var self = this;
 			self.makeLayer();
