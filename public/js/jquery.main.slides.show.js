@@ -117,8 +117,8 @@
 		fadeInAnimat : function(){
 			var self = this;
 
-			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',width:100+'%'}).stop().animate({opacity:0,zIndex:1, left:'-'+($(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()*0.5)/2+'px',width:100 +'%'}, self.settings.animation);
-			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({opacity:1,left:0+'px',width:100+'%'}).stop().animate({opacity:0,zIndex:1, left:'-'+($(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).width()*0.5)/2+'px',width:100 +'%'}, self.settings.animation);
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:0,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
 		fadeOutAnimat : function(){
