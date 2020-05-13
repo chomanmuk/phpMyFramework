@@ -147,7 +147,7 @@
 			var layerHeight = $(self.slide).height()/self.settings.heightcut;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".box_skitter_data", self.slide).append("<div class='block' rel='" + (i+j) + "' style='position:absolute;width:" + layerWidth + "px;left:" + (i*layerWidth) + "px;top:" + (j * layerHeight) + "px;z-index:9;height:" + $(self.slide).height() + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerWidth)+ "px -" + (j * layerHeight) + "px; '></div>");
+					$(".box_skitter_data", self.slide).append("<div class='block' rel='" + (i+j) + "' style='position:absolute;width:" + layerWidth + "px;left:" + (i*layerWidth) + "px;top:" + (j * layerHeight) + "px;z-index:9;height:" + layerHeight + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerWidth)+ "px -" + (j * layerHeight) + "px; '></div>");
 				}
 			}
 
