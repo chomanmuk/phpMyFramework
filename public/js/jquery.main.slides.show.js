@@ -146,7 +146,7 @@
 			var layerHeight = $(self.slide).height()/self.settings.heightcut;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".box_skitter_data", self.slide).append("<div class='block' rel='" + i + "' style='position:absolute;width:" + layerWidth + "px;left:" + (i*layerWidth) + "px;top:" + (j * layerHeight) + "px;z-index:9;height:" + $(self.slide).height() + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerWidth)+ "px " + (j * layerHeight) + "px; '></div>");
+					$(".box_skitter_data", self.slide).append("<div class='block' rel='" + (i+j) + "' style='position:absolute;width:" + layerWidth + "px;left:" + (i*layerWidth) + "px;top:" + (j * layerHeight) + "px;z-index:9;height:" + $(self.slide).height() + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerWidth)+ "px " + (j * layerHeight) + "px; '></div>");
 				}
 			}
 
@@ -154,16 +154,18 @@
 		closeLayer : function(){
 			var self = this;
 			for(var i=0;i<self.settings.widthcut;i++){
-				$(".box_skitter_data .block[rel='" + i + "']", self.slide).stop().delay((i*100)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
+				for(var j=0;j<self.settings.heightcut;j++){
+					$(".box_skitter_data .block[rel='" + (i+j) + "']", self.slide).stop().delay((i*100)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
+				)
 			}
 		},
 		blindAnimat : function(){
 			var self = this;
 			self.makeLayer();
 			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',zIndex:1, width:100+'%',opacity:0});
-			clearInterval(self.settings.timer);
-			//self.closeLayer();
-			//$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
+			//clearInterval(self.settings.timer);
+			self.closeLayer();
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
 		animate : function(){
