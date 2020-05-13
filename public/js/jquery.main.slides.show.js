@@ -156,7 +156,7 @@
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
 					$(".box_skitter_data .block[rel='" + (i+j) + "']", self.slide).stop().delay((i*100)).animate({opacity:0}, self.settings.animation, function(){ $(this).remove(); })
-				)
+				}
 			}
 		},
 		blindAnimat : function(){
