@@ -162,7 +162,7 @@
 		},
 		closeMosaicLayer : function(){
 			var self = this;
-			$(".box_skitter_data .block", self.slide).animate({width:0+'px',height:0+'px'}, self.settings.animation, function(){ $(this).remove(); })
+			$(".block", self.slide).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "easeOutBounce" } , complete: function(){ $(this).remove(); })
 		},
 		blindAnimat : function(){
 			var self = this;
