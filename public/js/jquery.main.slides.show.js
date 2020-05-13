@@ -199,7 +199,7 @@
 			var step = 0;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({transform:'rotate(180deg)'}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).transition({rotate:'45deg',opacity:0}).animate({transform:'rotate(180deg)'}, { duration: self.settings.animation,  specialEasing: { width: "easeInOutBack", height: "easeInOutBack" } , complete: function(){ $(this).remove(); }})
 					step++;
 				}
 			}
