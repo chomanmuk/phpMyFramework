@@ -174,6 +174,16 @@
 				}
 			}
 		},
+		closeBlockLayer : function(){
+			var self = this;
+			var step = 0;
+			for(var i=0;i<self.settings.widthcut;i++){
+				for(var j=0;j<self.settings.heightcut;j++){
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({left:($(".block[rel='" + step + "']", self.slide).css("left")+$(".block[rel='" + step + "']", self.slide).width())+'px',width:0+'px',height:0+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "linear" } , complete: function(){ $(this).remove(); }})
+					step++;
+				}
+			}
+		},
 		closeMosaicLayer : function(){
 			var self = this;
 			var step = 0;
@@ -272,6 +282,9 @@
 					break;
 				case "fadeReverse":
 					self.closeFadeReverseLayer();
+					break;
+				case "block":
+					self.closeBlockLayer();
 					break;
 				case "mosaic":
 					self.closeMosaicLayer();
