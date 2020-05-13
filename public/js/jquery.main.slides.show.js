@@ -162,7 +162,11 @@
 		},
 		closeMosaicLayer : function(){
 			var self = this;
-			$(".block", self.slide).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "easeOutBounce" } , complete: function(){ $(this).remove(); }})
+			for(var i=0;i<self.settings.widthcut;i++){
+				for(var j=0;j<self.settings.heightcut;j++){
+					$(".block[rel='" + (i+j) + "']", self.slide).animate({width:0+'px',height:0+'px'}, { duration: self.settings.animation,  specialEasing: { width: "linear", height: "easeOutBounce" } , complete: function(){ $(this).remove(); }})
+				}
+			}
 		},
 		blindAnimat : function(){
 			var self = this;
