@@ -80,7 +80,7 @@
 			options["animation"] = 1000;			//애니타임
 			options["pauseTime"] = 6000;			//대기시간
 			options["controllbar"] = true;			//좌우컨트롤 보이기
-			options["widthcut"] = 20;		//세로분활수  분활수가 많을수록 낮은사양의 피씨에서는 느릴수 있습니다.
+			options["widthcut"] = 10;		//세로분활수  분활수가 많을수록 낮은사양의 피씨에서는 느릴수 있습니다.
 			options["heightcut"] = 10;
 			options["animationType"] = "blindEvent";
 			options["animationSubType"] = "mosaic";
