@@ -229,7 +229,7 @@
 			var step = (self.settings.widthcut * self.settings.heightcut) -1;
 			for(var i=0;i<self.settings.widthcut;i++){
 				for(var j=0;j<self.settings.heightcut;j++){
-					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({top:$(self.slide).height()+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { top: "easeInOutElastic" } , complete: function(){ $(this).remove(); }})
+					$(".block[rel='" + step + "']", self.slide).stop().delay(((i+j)*80)).animate({top:0+'px',opacity:0}, { duration: self.settings.animation,  specialEasing: { top: "easeInOutElastic" } , complete: function(){ $(this).remove(); }})
 					step--;
 				}
 			}
