@@ -146,15 +146,21 @@
 			var self = this;
 			var layerwidth = $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).width()/self.settings.widthcut;
 			for(var i=0;i<self.settings.widthcut;i++){
-				$(".box_skitter_data", self.slide).append("<div style='position:absolute;width:" + layerwidth + "px;left:" + (i*layerwidth) + "px;z-index:9;height:" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).height() + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerwidth)+ "px 0px; '></div>")
+				$(".box_skitter_data", self.slide).append("<div class='block' rel='" + i + "' style='position:absolute;width:" + layerwidth + "px;left:" + (i*layerwidth) + "px;z-index:9;height:" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).height() + "px;background-image:url(" + $(".box_skitter_data div[rel='" + self.settings.oldSlide + "'] > img", self.slide).attr('src') + ");background-position: -" +( i* layerwidth)+ "px 0px; '></div>")
+			}
+
+		},
+		closeLayer : function(){
+			for(var i=0;i<self.settings.widthcut;i++){
+				$(".box_skitter_data .block[rel='" + i + "']", self.slide).stop().delay((i*100)).animate({opacity:1}, self.settings.animation, function(){ $(this).remove(); })
 			}
 		},
 		blindAnimat : function(){
 			var self = this;
 			self.makeLayer();
-			clearInterval(self.settings.timer)
 			$(".box_skitter_data div[rel='" + self.settings.oldSlide + "']", self.slide).attr('on', 'N').css({left:0+'px',zIndex:1, width:100+'%',opacity:0});
-		//	$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
+			self.closeLayer();
+			$(".box_skitter_data div[rel='" + self.settings.currentSlide + "']", self.slide).attr('on', 'Y').css({opacity:1,zIndex:1,left:0+'px',width:100+'%'}).stop().animate({opacity:1,zIndex:9,left:0+'px', width:100 +'%'}, self.settings.animation);
 
 		},
 		animate : function(){
